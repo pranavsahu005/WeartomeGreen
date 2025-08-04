@@ -10,6 +10,7 @@ html {
     color: #ffffff;
     line-height: 1.6;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -23,8 +24,8 @@ body {
     background-image: url('../IMAGES/anime\ \(1\).jpg'); /* Replace with your local image path */
     background-size: cover;
     background-repeat: no-repeat;
-   
-   
+    padding: 0 50px;
+   filter: brightness(0.8) contrast(1.1) saturate(1.2) grayscale(0.1);
 }
 .bodyimg {
     position: absolute;
@@ -132,6 +133,315 @@ body {
     color: #6ee7b7;
 }
 
+
+/* ============ Baby Plant Section ============ */
+.main-content {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    position: relative;
+}
+.baby-plant {
+    position: relative;
+    width: 90%;
+    top: 80px;
+    height: 400px;
+    display: flex;
+    background-color: #0d1a15;
+    border-radius: 30px;
+    filter: drop-shadow(6px 10px 20px rgba(15, 65, 14, 0.87));
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+.baby-plant-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+    filter: blur(1px) brightness(0.8) contrast(1.1) saturate(1.2) grayscale(0.1) opacity(0.9);
+    z-index: 1;
+}
+
+.baby-plant-content {
+    position: relative;
+    z-index: 2;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.icons-top {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    display: flex;
+    gap: 15px;
+    font-size: 1.5rem;
+}
+
+.icons-top i {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.icons-top i:hover {
+    transform: scale(1.1);
+}
+
+.save-icon {
+    color: #d88;
+}
+.cart-icon {
+    color: #fff;
+}
+.profile-icon {
+    color: #fff;
+    font-size: 1.2rem;
+}
+.baby-plant h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 0;
+    width: 50%;
+}
+.baby-plant p {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    width: 40%;
+    margin-top: -20px;
+}
+.explore-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.explore-btn {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.explore-btn button {
+    background-color: #6ee7b7;
+    color: #0d120d;
+    padding: 15px 30px;
+    border-radius: 50px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(110, 231, 183, 0.4);
+}
+
+.explore-btn button:hover {
+    background-color: #d6e7e1;
+    transform: translateY(-3px);
+}
+
+.down-arow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+   gap: 30px;
+   left: 400px;
+   position: relative;
+}
+
+.social-links-bottom {
+    display: flex;
+    gap: 20px;
+}
+
+.social-links-bottom i {
+    color: #fff;
+    font-size: 1.2rem;
+    transition: transform 0.2s ease;
+}
+
+.social-links-bottom i:hover {
+    transform: scale(1.2);
+}
+
+
+.plant-info-panel {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: 320px;
+    height: 85%;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 25px;
+    color: #fff;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.details-wrapper h3,
+.grading-section h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #eee;
+}
+
+.details-wrapper p {
+    top: 30px;
+    position: relative;
+    left: 150px;
+    font-size: 0.8rem;
+    color: #bbb;
+    line-height: 1.4;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.grading-section {
+    margin-top: 20px;
+}
+
+.grading-filters {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.filter-card {
+    width: 90px;
+    height: 90px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.filter-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    background-position: center;
+    position: relative;
+}
+
+/* Labels below image */
+.filter-card span {
+    margin-top: 5px;
+    font-size: 0.7rem;
+    color: #ccc;
+    position: absolute;
+}
+
+/* Filters */
+.filter-card.dark-green img {
+    filter: brightness(0.6) saturate(1.4);
+}
+.filter-card.soft-green img {
+    filter: brightness(1.1) saturate(1.1) hue-rotate(15deg);
+}
+.filter-card.bw img {
+    filter: grayscale(100%) contrast(1.2);
+}
+.filter-card.blue {
+    filter: hue-rotate(90deg) saturate(1.7) brightness(0.9) contrast(1.1);
+}
+.filter-card:hover {
+    transform: scale(1.05);
+}
+
+.pagination-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 8px;
+}
+
+.pagination-dots span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #ccc;
+    opacity: 0.4;
+}
+
+.pagination-dots span:nth-child(2) {
+    opacity: 1;
+}
+
+
+.plant-box-container {
+    position: absolute;
+    top: 50%;
+    right: 50px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 3;
+}
+
+.plant-box {
+    width: 120px;
+    height: 120px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.plant-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Filters */
+.plant-box.dark-green img {
+    filter: brightness(0.6) saturate(1.4);
+}
+
+.plant-box.soft-green img {
+    filter: brightness(1.1) saturate(1.1) hue-rotate(20deg);
+}
+
+.plant-box.bw img {
+    filter: grayscale(100%) contrast(1.1);
+}
+
+.plant-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(255, 255, 255, 0.3);
+}
+
+
+
 /*
     Hero section styles
 */
@@ -155,8 +465,22 @@ body {
     color: transparent;
     margin: 0 0 20px 0;
     line-height: 1.2;
+    top: -100px;
+    position: relative;
 }
-
+.hero-heading2 {
+    font-size: 1.2rem;
+    position: relative;
+    top: -100px;
+    width:50%;
+    font-weight: 500;
+    color: #f5fcf8;
+    margin: 10px 0 20px 0;
+}
+.hero-heading3 {
+     top: -100px; 
+     position: relative;
+}
 .hero-text {
     font-size: 1.2rem;
     font-weight: 300;
@@ -176,6 +500,9 @@ body {
     font-weight: 700;
     transition: background-color 0.3s ease, transform 0.3s ease;
     box-shadow: 0 4px 15px rgba(110, 231, 183, 0.4);
+    position: relative;
+    top: -400px;
+    left: 65%;
 }
 
 .action-btn:hover {
@@ -187,7 +514,7 @@ body {
 .hero-right {
     position: relative;
     width: 450px;
-    height: 450px;
+    height: 420px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 50px;
@@ -196,6 +523,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    bottom: 130px;
 }
 
 .hero-plant-img {
@@ -207,7 +535,30 @@ body {
     filter: drop-shadow(6px 10px 20px rgba(15, 65, 14, 0.87))
         drop-shadow(0px 0px 30px rgba(12, 117, 0, 0.329));
    position: relative;
-   top: -100px; 
+   top: -115px; 
+}
+.grading-section2 {
+    position: relative;
+    top: -100px;
+}
+.nav2 {
+    position: relative;
+    top: 650px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+    background-color: #161618b0;
+    width: 110%;
+    height: 40px;
+    border-radius: 2px;
+    padding: 0 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
 }
 /*
     About us section styles
