@@ -21,12 +21,14 @@ body {
     align-items: center;
     backdrop-filter: blur(5px);
     background-color: rgba(13, 18, 13, 0.8);
-    background-image: url('../IMAGES/anime\ \(1\).jpg'); /* Replace with your local image path */
+    background-image: url('../IMAGES/anime\ \(1\).jpg');
+    /* Replace with your local image path */
     background-size: cover;
     background-repeat: no-repeat;
     padding: 0 50px;
-   filter: brightness(0.8) contrast(1.1) saturate(1.2) grayscale(0.1);
+    filter: brightness(0.8) contrast(1.1) saturate(1.2) grayscale(0.1);
 }
+
 .bodyimg {
     position: absolute;
     top: 0;
@@ -34,8 +36,8 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-      background-size: cover;
-  filter: blur(2px) brightness(0.55) contrast(0.95) saturate(1.1) grayscale(0.2);
+    background-size: cover;
+    filter: blur(2px) brightness(0.55) contrast(0.95) saturate(1.1) grayscale(0.2);
 }
 
 .page-body {
@@ -142,6 +144,7 @@ body {
     width: 100vw;
     position: relative;
 }
+
 .baby-plant {
     position: relative;
     width: 90%;
@@ -193,6 +196,7 @@ body {
     cursor: pointer;
     transition: transform 0.2s ease;
 }
+
 .icons-top i:hover {
     transform: scale(1.1);
 }
@@ -200,13 +204,16 @@ body {
 .save-icon {
     color: #d88;
 }
+
 .cart-icon {
     color: #fff;
 }
+
 .profile-icon {
     color: #fff;
     font-size: 1.2rem;
 }
+
 .baby-plant h1 {
     font-size: 2.5rem;
     font-weight: 700;
@@ -214,6 +221,7 @@ body {
     margin-top: 0;
     width: 50%;
 }
+
 .baby-plant p {
     font-size: 1rem;
     font-weight: 300;
@@ -221,6 +229,7 @@ body {
     width: 40%;
     margin-top: -20px;
 }
+
 .explore-container {
     display: flex;
     align-items: center;
@@ -245,7 +254,8 @@ body {
     box-shadow: 0 4px 15px rgba(110, 231, 183, 0.4);
 }
 
-.explore-btn button:hover {
+.explore-btn button,
+.left-para button:hover {
     background-color: #d6e7e1;
     transform: translateY(-3px);
 }
@@ -257,9 +267,9 @@ body {
     color: #ffffff;
     width: 40px;
     height: 40px;
-   gap: 30px;
-   left: 400px;
-   position: relative;
+    gap: 30px;
+    left: 400px;
+    position: relative;
 }
 
 .social-links-bottom {
@@ -360,15 +370,19 @@ body {
 .filter-card.dark-green img {
     filter: brightness(0.6) saturate(1.4);
 }
+
 .filter-card.soft-green img {
     filter: brightness(1.1) saturate(1.1) hue-rotate(15deg);
 }
+
 .filter-card.bw img {
     filter: grayscale(100%) contrast(1.2);
 }
+
 .filter-card.blue {
     filter: hue-rotate(90deg) saturate(1.7) brightness(0.9) contrast(1.1);
 }
+
 .filter-card:hover {
     transform: scale(1.05);
 }
@@ -411,7 +425,7 @@ body {
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
@@ -468,19 +482,22 @@ body {
     top: -100px;
     position: relative;
 }
+
 .hero-heading2 {
     font-size: 1.2rem;
     position: relative;
     top: -100px;
-    width:50%;
+    width: 50%;
     font-weight: 500;
     color: #f5fcf8;
     margin: 10px 0 20px 0;
 }
+
 .hero-heading3 {
-     top: -100px; 
-     position: relative;
+    top: -100px;
+    position: relative;
 }
+
 .hero-text {
     font-size: 1.2rem;
     font-weight: 300;
@@ -532,15 +549,16 @@ body {
     left: 25px;
     border-radius: 30px;
     object-fit: cover;
-    filter: drop-shadow(6px 10px 20px rgba(15, 65, 14, 0.87))
-        drop-shadow(0px 0px 30px rgba(12, 117, 0, 0.329));
-   position: relative;
-   top: -115px; 
+    filter: drop-shadow(6px 10px 20px rgba(15, 65, 14, 0.87)) drop-shadow(0px 0px 30px rgba(12, 117, 0, 0.329));
+    position: relative;
+    top: -115px;
 }
+
 .grading-section2 {
     position: relative;
     top: -100px;
 }
+
 .nav2 {
     position: relative;
     top: 650px;
@@ -560,9 +578,56 @@ body {
     justify-content: center;
 
 }
+
 /*
     About us section styles
 */
+
+.left-para {
+    position: absolute;
+    top: 47%;
+    left: 40px;
+    max-width: 39%;
+    font-size: 1rem;
+    color: #ffffff;
+    font-weight: 300;
+    line-height: 1.6;
+    width: 100%;
+    height: 10%;
+    background-color: #161618b0;
+    text-align: start;
+    padding: 0 10px;
+    border-radius: 10px;
+}
+
+.left-para .left-social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    margin: 20px 0 0 0;
+    left: 30%;
+    position: relative;
+}
+
+.left-para button {
+    position: relative;
+    top: 20px;
+    left: 22%;
+    font-size: 1rem;
+    width: 40%;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    background-color: #6ee7b7;
+    color: #0d120d;
+    border-radius: 50px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(110, 231, 183, 0.4);
+}
+
 .about-us {
     display: flex;
     justify-content: space-between;
@@ -573,13 +638,21 @@ body {
 
 .about-left-col {
     max-width: 40%;
+    top: -850px;
+    position: relative;
 }
 
 .section-heading {
     font-size: 2rem;
-    font-weight: 700;
-    color: #6ee7b7;
+    font-weight: 900;
+    color: #a9f0d1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5),
+        2px 2px 62px rgba(247, 247, 247, 0.836),
+        2px 2px 40px rgba(0, 0, 0, 0.5),
+        0px 0px 4px rgba(42, 46, 43, 0.5);
     margin: 0 0 20px 0;
+    font-family: 'Montserrat', sans-serif;
+
 }
 
 .about-text-box {
@@ -598,6 +671,37 @@ body {
     max-width: 55%;
 }
 
+.about-right-col p {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #e0e0e0;
+    line-height: 1.6;
+    top: -460px;
+    max-width: 60%;
+    left: 250px;
+    position: relative;
+}
+
+.about-right-col ul {
+    list-style-type: none;
+    position: relative;
+    top: -200px;
+}
+
+.about-right-col li {
+    margin: 10px 0;
+    position: relative;
+}
+
+.about-right-col li a {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #d4e4c6;
+    position: relative;
+    left: 20px;
+    text-decoration: none;
+}
+
 .video-container {
     position: relative;
     width: 100%;
@@ -605,6 +709,7 @@ body {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    top: -230px;
 }
 
 .office-video {
@@ -617,6 +722,8 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    top: -210px;
+    position: relative;
 }
 
 .stat-card {
@@ -640,6 +747,145 @@ body {
     font-weight: 300;
     color: #e0e0e0;
 }
+
+
+/* Plant Shop Section */
+.plant-shop {
+    display: flex;
+    gap: 20px;
+    margin: 40px 0;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    height: 50%;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+.sidebar .secondary li {
+    margin-top: 20px;
+    color: #b4f8b4;
+    position: relative;
+    bottom: -30px;
+    font-size: 18px;
+}
+.sidebar a {
+    color: #a6e1f0;
+    text-decoration: none;
+}
+
+.sidebar li {
+    margin: 20px 0;
+    font-size: 22px;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.sidebar li:hover {
+    color: #ffd700;
+    /* hover pe golden highlight */
+}
+
+/* Shop Content */
+.shop-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 30px;
+}
+
+/* Top Bar */
+.top-bar {
+    text-align: right;
+    margin-bottom: 25px;
+}
+
+.top-bar input {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    width: 30%;
+    font-size: 14px;
+    left: -10%;
+    position: relative;
+    text-align: center;
+}
+
+/* Plant Cards */
+.plants {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 70px;
+}
+
+.plant-card {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.plant-card img {
+    width: 150px;
+    height: 200px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+}
+
+.plant-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.plant-name {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.plant-price {
+    color: #111;
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+
+
+.plant-card button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background: #333;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.plant-card button:hover {
+    background: #555;
+}
+
+
 
 /*
     Advantages section styles
@@ -927,4 +1173,3 @@ body {
         text-align: center;
     }
 }
-
