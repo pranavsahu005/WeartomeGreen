@@ -1,6 +1,4 @@
-/*
-    Basic styles for the whole page
-*/
+
 body,
 html {
     margin: 0;
@@ -22,14 +20,14 @@ body {
     backdrop-filter: blur(5px);
     background-color: rgba(13, 18, 13, 0.8);
     background-image: url('../IMAGES/anime\ \(1\).jpg');
-    /* Replace with your local image path */
+    /* This is my special plant background */
     background-size: cover;
     background-repeat: no-repeat;
     padding: 0 50px;
     filter: brightness(0.8) contrast(1.1) saturate(1.2) grayscale(0.1);
 }
 
-.bodyimg {
+.full-garden-pic {
     position: absolute;
     top: 0;
     left: 0;
@@ -48,9 +46,9 @@ body {
 }
 
 /*
-    Header styles
+    Top vine styles
 */
-.main-header {
+.sky-vine {
     width: 100%;
     position: fixed;
     top: 0;
@@ -60,7 +58,7 @@ body {
     background-color: rgba(13, 18, 13, 0.5);
 }
 
-.header-content {
+.vine-content {
     max-width: 1200px;
     margin: 0 auto;
     padding: 15px 20px;
@@ -69,14 +67,14 @@ body {
     align-items: center;
 }
 
-.logo-link {
+.sprout-link {
     display: flex;
     align-items: center;
     text-decoration: none;
     color: inherit;
 }
 
-.logo-icon {
+.leaf-icon {
     width: 30px;
     height: 30px;
     margin-right: 10px;
@@ -84,18 +82,18 @@ body {
     border-radius: 50%;
 }
 
-.brand-name {
+.plant-name {
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 1px;
 }
 
-.main-nav {
+.branch-nav {
     display: flex;
     gap: 30px;
 }
 
-.nav-item {
+.branch-link {
     text-decoration: none;
     color: #e0e0e0;
     font-weight: 400;
@@ -103,17 +101,17 @@ body {
     transition: color 0.3s ease;
 }
 
-.nav-item:hover {
+.branch-link:hover {
     color: #6ee7b7;
 }
 
-.user-actions {
+.gardener-actions {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-.city {
+.garden-city {
     color: #e0e0e0;
     text-decoration: none;
     font-weight: 300;
@@ -121,23 +119,23 @@ body {
     transition: color 0.3s ease;
 }
 
-.city:hover {
+.garden-city:hover {
     color: #6ee7b7;
 }
 
-.cart-icon {
+.pot-icon {
     color: #e0e0e0;
     transition: color 0.3s ease;
     font-size: 1.2rem;
 }
 
-.cart-icon:hover {
+.pot-icon:hover {
     color: #6ee7b7;
 }
 
 
-/* ============ Baby Plant Section ============ */
-.main-content {
+/* ============ Little Sprout Section ============ */
+.big-green-area {
     padding: 20px;
     display: flex;
     justify-content: center;
@@ -145,7 +143,7 @@ body {
     position: relative;
 }
 
-.baby-plant {
+.little-sprout-section {
     position: relative;
     width: 90%;
     top: 80px;
@@ -161,7 +159,7 @@ body {
     margin-bottom: 40px;
 }
 
-.baby-plant-img {
+.little-sprout-pic {
     position: absolute;
     top: 0;
     left: 0;
@@ -173,7 +171,7 @@ body {
     z-index: 1;
 }
 
-.baby-plant-content {
+.little-sprout-stuff {
     position: relative;
     z-index: 2;
     padding: 50px;
@@ -183,7 +181,7 @@ body {
     width: 100%;
 }
 
-.icons-top {
+.sky-icons {
     position: absolute;
     top: 50px;
     right: 50px;
@@ -192,29 +190,29 @@ body {
     font-size: 1.5rem;
 }
 
-.icons-top i {
+.sky-icons i {
     cursor: pointer;
     transition: transform 0.2s ease;
 }
 
-.icons-top i:hover {
+.sky-icons i:hover {
     transform: scale(1.1);
 }
 
-.save-icon {
+.keep-icon {
     color: #d88;
 }
 
-.cart-icon {
+.pot-icon {
     color: #fff;
 }
 
-.profile-icon {
+.my-gardener-icon {
     color: #fff;
     font-size: 1.2rem;
 }
 
-.baby-plant h1 {
+.little-sprout-section h1 {
     font-size: 2.5rem;
     font-weight: 700;
     line-height: 1.2;
@@ -222,7 +220,7 @@ body {
     width: 50%;
 }
 
-.baby-plant p {
+.little-sprout-section p {
     font-size: 1rem;
     font-weight: 300;
     line-height: 1.5;
@@ -230,19 +228,19 @@ body {
     margin-top: -20px;
 }
 
-.explore-container {
+.dig-here-box {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-.explore-btn {
+.dig-deeper-btn {
     display: flex;
     align-items: center;
     text-decoration: none;
 }
 
-.explore-btn button {
+.dig-deeper-btn button {
     background-color: #6ee7b7;
     color: #0d120d;
     padding: 15px 30px;
@@ -254,13 +252,13 @@ body {
     box-shadow: 0 4px 15px rgba(110, 231, 183, 0.4);
 }
 
-.explore-btn button,
-.left-para button:hover {
+.dig-deeper-btn button,
+.long-story-paragraph button:hover {
     background-color: #d6e7e1;
     transform: translateY(-3px);
 }
 
-.down-arow {
+.dig-arrows {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -272,23 +270,23 @@ body {
     position: relative;
 }
 
-.social-links-bottom {
+.friend-vines {
     display: flex;
     gap: 20px;
 }
 
-.social-links-bottom i {
+.friend-vines i {
     color: #fff;
     font-size: 1.2rem;
     transition: transform 0.2s ease;
 }
 
-.social-links-bottom i:hover {
+.friend-vines i:hover {
     transform: scale(1.2);
 }
 
 
-.plant-info-panel {
+.plant-story-box {
     position: absolute;
     top: 40px;
     right: 40px;
@@ -306,15 +304,15 @@ body {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
-.details-wrapper h3,
-.grading-section h3 {
+.tiny-details h3,
+.leaf-filters h3 {
     font-size: 1rem;
     font-weight: 600;
     margin-bottom: 10px;
     color: #eee;
 }
 
-.details-wrapper p {
+.tiny-details p {
     top: 30px;
     position: relative;
     left: 150px;
@@ -324,18 +322,18 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-.grading-section {
+.leaf-filters {
     margin-top: 20px;
 }
 
-.grading-filters {
+.filter-choices {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
     gap: 10px;
 }
 
-.filter-card {
+.leaf-card {
     width: 90px;
     height: 90px;
     border-radius: 10px;
@@ -349,7 +347,7 @@ body {
     cursor: pointer;
 }
 
-.filter-card img {
+.leaf-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -359,42 +357,42 @@ body {
 }
 
 /* Labels below image */
-.filter-card span {
+.leaf-card span {
     margin-top: 5px;
     font-size: 0.7rem;
     color: #ccc;
     position: absolute;
 }
 
-/* Filters */
-.filter-card.dark-green img {
+/* Leafy filters */
+.leaf-card.dark-leafy img {
     filter: brightness(0.6) saturate(1.4);
 }
 
-.filter-card.soft-green img {
+.leaf-card.soft-leafy img {
     filter: brightness(1.1) saturate(1.1) hue-rotate(15deg);
 }
 
-.filter-card.bw img {
+.leaf-card.black-white-leafy img {
     filter: grayscale(100%) contrast(1.2);
 }
 
-.filter-card.blue {
+.leaf-card.blue-leafy {
     filter: hue-rotate(90deg) saturate(1.7) brightness(0.9) contrast(1.1);
 }
 
-.filter-card:hover {
+.leaf-card:hover {
     transform: scale(1.05);
 }
 
-.pagination-dots {
+.dot-dots {
     display: flex;
     justify-content: center;
     margin-top: 15px;
     gap: 8px;
 }
 
-.pagination-dots span {
+.dot-dots span {
     width: 6px;
     height: 6px;
     border-radius: 50%;
@@ -402,7 +400,7 @@ body {
     opacity: 0.4;
 }
 
-.pagination-dots span:nth-child(2) {
+.dot-dots span:nth-child(2) {
     opacity: 1;
 }
 
@@ -418,34 +416,18 @@ body {
     z-index: 3;
 }
 
-.plant-box {
-    width: 120px;
-    height: 120px;
-    border-radius: 20px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-}
 
-.plant-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 
 /* Filters */
-.plant-box.dark-green img {
+.plant-box.dark-leafy img {
     filter: brightness(0.6) saturate(1.4);
 }
 
-.plant-box.soft-green img {
+.plant-box.soft-leafy img {
     filter: brightness(1.1) saturate(1.1) hue-rotate(20deg);
 }
 
-.plant-box.bw img {
+.plant-box.black-white-leafy img {
     filter: grayscale(100%) contrast(1.1);
 }
 
@@ -457,9 +439,9 @@ body {
 
 
 /*
-    Hero section styles
+    Big Plant Spot styles
 */
-.hero-section {
+.big-plant-spot {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -467,11 +449,11 @@ body {
     gap: 50px;
 }
 
-.hero-left {
+.left-garden {
     max-width: 50%;
 }
 
-.hero-heading {
+.main-plant-title {
     font-size: 3rem;
     font-weight: 700;
     background: linear-gradient(90deg, #6ee7b7, #a7f3d0);
@@ -483,7 +465,7 @@ body {
     position: relative;
 }
 
-.hero-heading2 {
+.tiny-plant-title {
     font-size: 1.2rem;
     position: relative;
     top: -100px;
@@ -493,19 +475,19 @@ body {
     margin: 10px 0 20px 0;
 }
 
-.hero-heading3 {
+.smaller-plant-title {
     top: -100px;
     position: relative;
 }
 
-.hero-text {
+.little-plant-words {
     font-size: 1.2rem;
     font-weight: 300;
     color: #e0e0e0;
     margin: 0 0 30px 0;
 }
 
-.action-btn {
+.click-me-button {
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -522,13 +504,13 @@ body {
     left: 65%;
 }
 
-.action-btn:hover {
+.click-me-button:hover {
     background-color: #34d399;
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(52, 211, 153, 0.5);
 }
 
-.hero-right {
+.right-garden {
     position: relative;
     width: 450px;
     height: 420px;
@@ -543,7 +525,7 @@ body {
     bottom: 130px;
 }
 
-.hero-plant-img {
+.bonsai-buddy-pic {
     width: 90%;
     height: 420px;
     left: 25px;
@@ -554,12 +536,12 @@ body {
     top: -115px;
 }
 
-.grading-section2 {
+.leaf-filters-2 {
     position: relative;
     top: -100px;
 }
 
-.nav2 {
+.ground-nav {
     position: relative;
     top: 650px;
     right: 20px;
@@ -576,16 +558,31 @@ body {
     text-align: center;
     align-items: center;
     justify-content: center;
+}
 
+.ground-nav a{
+    text-decoration: none;
+    color: #c9f8e2;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    gap: 20px;
+    padding: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 2px 2px 4px rgba(153, 138, 138, 0.788),
+                 2px 2px 62px rgba(247, 247, 247, 0.836),;
+}
+.ground-nav a:hover {
+    color: #34d399;
 }
 
 /*
-    About us section styles
+    Our Story section styles
 */
 
-.left-para {
+.long-story-paragraph {
     position: absolute;
-    top: 47%;
+    top: 38%;
     left: 40px;
     max-width: 39%;
     font-size: 1rem;
@@ -593,14 +590,14 @@ body {
     font-weight: 300;
     line-height: 1.6;
     width: 100%;
-    height: 10%;
+    height: 9%;
     background-color: #161618b0;
     text-align: start;
     padding: 0 10px;
     border-radius: 10px;
 }
 
-.left-para .left-social-icons {
+.long-story-paragraph .story-friends {
     display: flex;
     gap: 15px;
     margin-top: 10px;
@@ -609,7 +606,7 @@ body {
     position: relative;
 }
 
-.left-para button {
+.long-story-paragraph button {
     position: relative;
     top: 20px;
     left: 22%;
@@ -628,7 +625,7 @@ body {
     box-shadow: 0 4px 15px rgba(110, 231, 183, 0.4);
 }
 
-.about-us {
+.story-of-us {
     display: flex;
     justify-content: space-between;
     gap: 50px;
@@ -636,13 +633,13 @@ body {
     align-items: flex-end;
 }
 
-.about-left-col {
+.story-left {
     max-width: 40%;
     top: -850px;
     position: relative;
 }
 
-.section-heading {
+.story-title {
     font-size: 2rem;
     font-weight: 900;
     color: #a9f0d1;
@@ -655,7 +652,7 @@ body {
 
 }
 
-.about-text-box {
+.story-words-box {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -664,14 +661,14 @@ body {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
-.about-right-col {
+.story-right {
     display: flex;
     flex-direction: column;
     gap: 30px;
     max-width: 55%;
 }
 
-.about-right-col p {
+.story-right p {
     font-size: 1rem;
     font-weight: 300;
     color: #e0e0e0;
@@ -682,18 +679,18 @@ body {
     position: relative;
 }
 
-.about-right-col ul {
+.story-right ul {
     list-style-type: none;
     position: relative;
     top: -200px;
 }
 
-.about-right-col li {
+.story-right li {
     margin: 10px 0;
     position: relative;
 }
 
-.about-right-col li a {
+.story-right li a {
     font-size: 1rem;
     font-weight: 700;
     color: #d4e4c6;
@@ -702,7 +699,7 @@ body {
     text-decoration: none;
 }
 
-.video-container {
+.video-box {
     position: relative;
     width: 100%;
     height: 350px;
@@ -712,13 +709,13 @@ body {
     top: -230px;
 }
 
-.office-video {
+.office-video-loop {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.stats-grid {
+.number-blocks {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
@@ -726,7 +723,7 @@ body {
     position: relative;
 }
 
-.stat-card {
+.number-card {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -736,21 +733,21 @@ body {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-.stat-num {
+.big-number {
     font-size: 2.5rem;
     font-weight: 700;
     color: #a7f3d0;
 }
 
-.stat-label {
+.number-label {
     font-size: 0.9rem;
     font-weight: 300;
     color: #e0e0e0;
 }
 
 
-/* Plant Shop Section */
-.plant-shop {
+/* The Plant Store Section */
+.the-plant-store {
     display: flex;
     gap: 20px;
     margin: 40px 0;
@@ -759,32 +756,35 @@ body {
 }
 
 /* Sidebar */
-.sidebar {
+.side-plant-menu {
     background: rgba(255, 255, 255, 0.2);
     padding: 20px 10px;
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     height: 50%;
 }
-.sidebar ul {
+
+.side-plant-menu ul {
     list-style: none;
     padding: 0;
     margin: 0;
     text-align: center;
 }
-.sidebar .secondary li {
+
+.side-plant-menu .secondary li {
     margin-top: 20px;
     color: #b4f8b4;
     position: relative;
     bottom: -30px;
     font-size: 18px;
 }
-.sidebar a {
+
+.side-plant-menu a {
     color: #a6e1f0;
     text-decoration: none;
 }
 
-.sidebar li {
+.side-plant-menu li {
     margin: 20px 0;
     font-size: 22px;
     color: #fff;
@@ -792,13 +792,13 @@ body {
     transition: color 0.3s;
 }
 
-.sidebar li:hover {
+.side-plant-menu li:hover {
     color: #ffd700;
     /* hover pe golden highlight */
 }
 
 /* Shop Content */
-.shop-content {
+.store-stuff {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -812,12 +812,12 @@ body {
 }
 
 /* Top Bar */
-.top-bar {
+.search-bar-on-top {
     text-align: right;
     margin-bottom: 25px;
 }
 
-.top-bar input {
+.search-bar-on-top input {
     padding: 10px;
     border-radius: 20px;
     border: none;
@@ -829,7 +829,7 @@ body {
 }
 
 /* Plant Cards */
-.plants {
+.plant-list {
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
@@ -837,7 +837,7 @@ body {
     gap: 70px;
 }
 
-.plant-card {
+.plant-box {
     text-align: center;
     padding: 20px;
     background: rgba(255, 255, 255, 0.1);
@@ -845,33 +845,33 @@ body {
     transition: transform 0.3s ease, background 0.3s ease;
 }
 
-.plant-card img {
+.plant-box img {
     width: 150px;
     height: 200px;
     margin-bottom: 12px;
     border-radius: 12px;
 }
 
-.plant-card:hover {
+.plant-box:hover {
     transform: translateY(-8px);
     background: rgba(255, 255, 255, 0.25);
 }
 
-.plant-name {
+.plant-buddy-name {
     font-weight: bold;
     font-size: 18px;
     margin-bottom: 5px;
 }
 
-.plant-price {
-    color: #111;
+.plant-price-tag {
+    color: #ffecec;
     margin-bottom: 12px;
     font-size: 16px;
 }
 
 
 
-.plant-card button {
+.plant-box button {
     padding: 10px 20px;
     border: none;
     border-radius: 20px;
@@ -881,32 +881,32 @@ body {
     font-size: 14px;
 }
 
-.plant-card button:hover {
+.plant-box button:hover {
     background: #555;
 }
 
 
 
 /*
-    Advantages section styles
+    Our Superpowers section styles
 */
-.advantages {
+.our-superpowers {
     padding: 100px 0;
     text-align: center;
 }
 
-.advantages .section-heading {
+.our-superpowers .power-title {
     color: #a7f3d0;
     margin-bottom: 50px;
 }
 
-.advantages-grid {
+.superpower-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 }
 
-.advantage-card {
+.power-card {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -916,35 +916,35 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.advantage-card:hover {
+.power-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
 }
 
-.card-num {
+.power-number {
     font-size: 2.5rem;
     font-weight: 700;
     color: #6ee7b7;
     margin-bottom: 10px;
 }
 
-.card-title {
+.power-word {
     font-size: 1.5rem;
     font-weight: 500;
     color: #e0e0e0;
     margin-bottom: 15px;
 }
 
-.card-text {
+.power-words {
     font-size: 0.9rem;
     font-weight: 300;
     color: #e0e0e0;
 }
 
 /*
-    Contact section styles
+    Let's Chat section styles
 */
-.contact-area {
+.chat-with-us {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -958,7 +958,7 @@ body {
     overflow: hidden;
 }
 
-.contact-area::before {
+.chat-with-us::before {
     content: '';
     position: absolute;
     top: 0;
@@ -969,32 +969,32 @@ body {
     z-index: 1;
 }
 
-.contact-left,
-.contact-right {
+.chat-left,
+.chat-right {
     position: relative;
     z-index: 2;
     padding: 0 50px;
 }
 
-.contact-left {
+.chat-left {
     max-width: 40%;
 }
 
-.contact-heading {
+.chat-title {
     font-size: 2.5rem;
     font-weight: 700;
     color: #a7f3d0;
     margin-bottom: 10px;
 }
 
-.contact-subheading {
+.chat-subtitle {
     font-size: 1.2rem;
     font-weight: 300;
     color: #e0e0e0;
     margin-bottom: 30px;
 }
 
-.social-icons {
+.chat-friends {
     display: flex;
     gap: 15px;
 }
@@ -1010,18 +1010,18 @@ body {
     color: #6ee7b7;
 }
 
-.contact-right {
+.chat-right {
     max-width: 50%;
 }
 
-.contact-form {
+.chat-form {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.form-input,
-.form-textarea {
+.chat-box-input,
+.chat-box-area {
     width: 100%;
     padding: 15px 20px;
     background: rgba(255, 255, 255, 0.1);
@@ -1034,20 +1034,20 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.form-input::placeholder,
-.form-textarea::placeholder {
+.chat-box-input::placeholder,
+.chat-box-area::placeholder {
     color: #cccccc;
 }
 
-.form-input:focus,
-.form-textarea:focus {
+.chat-box-input:focus,
+.chat-box-area:focus {
     outline: none;
     background: rgba(255, 255, 255, 0.2);
     border-color: #6ee7b7;
     box-shadow: 0 0 10px rgba(110, 231, 183, 0.5);
 }
 
-.send-btn {
+.send-it-button {
     background-color: #6ee7b7;
     color: #0d120d;
     padding: 15px 30px;
@@ -1059,22 +1059,22 @@ body {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.send-btn:hover {
+.send-it-button:hover {
     background-color: #34d399;
     transform: translateY(-3px);
 }
 
 /*
-    Footer styles
+    Bottom Garden styles
 */
-.main-footer {
+.bottom-garden {
     width: 100%;
     background-color: #0d120d;
     padding: 30px 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.footer-content {
+.bottom-garden-stuff {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -1082,28 +1082,28 @@ body {
     align-items: center;
 }
 
-.footer-nav {
+.bottom-nav-links {
     display: flex;
     gap: 30px;
 }
 
-.footer-link {
+.bottom-link {
     text-decoration: none;
     color: #e0e0e0;
     font-weight: 300;
     transition: color 0.3s ease;
 }
 
-.footer-link:hover {
+.bottom-link:hover {
     color: #6ee7b7;
 }
 
-.footer-logo {
+.bottom-sprout-logo {
     display: flex;
     align-items: center;
 }
 
-.footer-logo-icon {
+.bottom-leaf-icon {
     filter: brightness(0) invert(1);
     margin-right: 10px;
     width: 20px;
@@ -1111,65 +1111,23 @@ body {
     border-radius: 50%;
 }
 
-.footer-brand {
+.bottom-plant-name {
     font-size: 1.2rem;
     font-weight: 500;
 }
 
 /*
-    Responsive adjustments
+    Small screen friendly
 */
 @media (max-width: 992px) {
-    .header-content {
+    .vine-content {
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
     }
 
-    .main-nav,
-    .user-actions {
+    .branch-nav,
+    .gardener-actions {
         margin-top: 10px;
-    }
-
-    .hero-section {
-        flex-direction: column;
-        padding-top: 100px;
-    }
-
-    .hero-left,
-    .hero-right {
-        max-width: 100%;
-        text-align: center;
-    }
-
-    .hero-plant-img {
-        width: 100%;
-        height: auto;
-    }
-
-    .about-us {
-        flex-direction: column;
-    }
-
-    .about-left-col,
-    .about-right-col {
-        max-width: 100%;
-    }
-
-    .advantages-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .contact-area {
-        flex-direction: column;
-        background-size: contain;
-        background-position: top center;
-    }
-
-    .contact-left,
-    .contact-right {
-        max-width: 100%;
-        padding: 20px;
-        text-align: center;
     }
 }
