@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WearTomeGreen - Futuristic Plants</title>
+    <!-- Google Fonts: Roboto and Poppins for a clean look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons: For social media, navigation, and product icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* CSS ke liye yahan se shuru hai, bade aaram se time leke likha hai */
+        :root {
+            /* Rang (Colors) jo poore website mein use honge */
+            --background-color: #0c1a12;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --green-highlight: #34d399; /* Peaceful Green */
+            --light-text: #e0f2e8;
+            --dark-text: #08110c;
+        }
+
+        /* Basic Body and overall layout */
+        body {
+            background-color: var(--background-color);
+            color: var(--light-text);
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-image: url('/IMAGES/green\ \(7\).jpg'); /* Placeholder background image */
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 0;
+            position: relative;
+            z-index: 1; /* Taki content hamesha upar rahe */
+        }
+
+        /* Glassmorphism Effect ke liye general style */
+        .glass-effect {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            border-radius: 15px;
+            overflow: hidden; /* Andar ke content ke liye */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .glass-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 48px 0 rgba(0, 0, 0, 0.45);
+        }
+
+        /* Heading ke liye style */
+        h2.section-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin: 50px 0 30px;
+            color: var(--green-highlight);
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Navigation Bar (Nav) */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: var(--glass-bg);
+            border-bottom: 1px solid var(--glass-border);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-logo a {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--green-highlight);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            color: var(--green-highlight);
+            text-shadow: 0 0 10px var(--green-highlight);
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-icons a {
+            color: var(--light-text);
+            font-size: 1.2em;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-icons a:hover {
+            color: var(--green-highlight);
+            transform: scale(1.1);
+        }
+
+        /* Hero Section */
+        .welcome-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .welcome-content h1 {
+            font-size: 4em;
+            font-family: 'Poppins', sans-serif;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+
+        .welcome-content p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        /* Products Section */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .product-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            transition: transform 0.4s ease;
+        }
+        
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .product-card .category-tag {
+            background-color: var(--green-highlight);
+            color: var(--dark-text);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        
+        .product-card h3 {
+            font-size: 1.4em;
+            margin: 10px 0 5px;
+            color: var(--green-highlight);
+        }
+
+        .product-card p.description {
+            font-size: 0.9em;
+            color: #ccc;
+            margin: 0;
+            min-height: 40px; /* Description ke liye thodi space */
+        }
+
+        .product-card .price {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin: 10px 0;
+            color: var(--light-text);
+        }
+
+        .product-card button {
+            background-color: var(--green-highlight);
+            color: var(--dark-text);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .product-card button:hover {
+            transform: scale(1.05);
+            background-color: #55f3a9;
+        }
+
+        /* Side Category Menu */
+        .main-content-layout {
+            display: flex;
+            gap: 40px;
+        }
+
+        .side-category-menu {
+            width: 250px;
+            padding: 30px 20px;
+            height: fit-content;
+            position: absolute;
+            top: 700px;
+        }
+
+        .side-category-menu h4 {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: var(--green-highlight);
+        }
+
+        .side-category-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .side-category-menu li {
+            margin-bottom: 15px;
+        }
+
+        .side-category-menu a {
+            color: var(--light-text);
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+            display: block;
+            position: relative;
+        }
+
+        .side-category-menu a:hover {
+            color: var(--green-highlight);
+            transform: translateX(5px);
+        }
+
+          .side-plant-menu {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px 10px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            height: fit-content;
+            /* Height ko content ke hisaab se adjust kiya */
+            width: 250px;
+        }
+
+        .side-plant-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .side-plant-menu li {
+            margin: 20px 0;
+            font-size: 18px;
+            color: #fff;
+            cursor: pointer;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            /* Icons aur text ko align kiya */
+        }
+
+        .side-plant-menu li:hover {
+            color: #ffd700;
+        }
+
+        .side-plant-menu a {
+            color: inherit;
+            text-decoration: none;
+            display: block;
+        }
+
+        .side-plant-menu .secondary li {
+            margin-top: 20px;
+            color: #b4f8b4;
+            font-size: 16px;
+        }
+        
+        /* Icons ke liye styling */
+        .side-plant-menu .fas,
+        .side-plant-menu .fa-solid {
+            margin-right: 15px;
+            /* Text aur icon ke beech gap */
+            font-size: 20px;
+            color: #6ee7b7;
+        }
+        
+        /* Category-wise sections */
+        .category-section {
+            flex-grow: 1;
+        }
+
+        /* Footer */
+        .main-footer {
+            background: var(--background-color);
+            padding: 60px 0;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+            box-shadow: 0 -4px 30px rgba(0,0,0,0.1);
+            margin-top: 50px;
+        }
+        
+        .footer-logo {
+            font-size: 2em;
+            font-family: 'Poppins', sans-serif;
+            color: var(--green-highlight);
+            margin-bottom: 20px;
+        }
+        
+        .footer-links-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+
+        .footer-column h4 {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            color: var(--green-highlight);
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: var(--light-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--green-highlight);
+        }
+
+        .footer-social-media {
+            margin-top: 30px;
+        }
+
+        .footer-social-media a {
+            color: var(--light-text);
+            font-size: 1.5em;
+            margin: 0 15px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer-social-media a:hover {
+            color: var(--green-highlight);
+            transform: scale(1.2);
+        }
+
+        .footer-copyright {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- Header aur Navigation Bar -->
+<header class="top-nav">
+    <div class="nav-logo">
+        <a href="#">WearTomeGreen</a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#top-selling-section">Top Selling</a></li>
+        <li><a href="#plants-section">Plants</a></li>
+        <li><a href="#contact-footer">Contact</a></li>
+    </ul>
+    <div class="nav-icons">
+        <a href="#"><i class="fas fa-search"></i></a>
+        <a href="#"><i class="fas fa-user"></i></a>
+        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+        <a href="#"><i class="fas fa-bars"></i></a> <!-- Menu icon for mobile -->
+    </div>
+</header>
+
+<!-- Welcome Section -->
+<section class="welcome-section">
+    <div class="welcome-content">
+        <h1>Welcome to WearTomeGreen</h1>
+        <p>A plant sanctuary for a peaceful you.</p>
+    </div>
+</section>
+
+<!-- Main Content Area with Sidebar -->
+<div class="container main-content-layout">
+    <!-- Side Plant Menu -->
+
+    <div class="side-plant-menu">
+                <ul>
+                    <li>
+                        <i class="fas fa-home"></i>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-leaf"></i>
+                        <a href="#">Plants</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-seedling"></i>
+                        <a href="#">Seeds</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-shopping-basket"></i>
+                        <a href="#">Pots & Tools</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-info-circle"></i>
+                        <a href="#">About Us</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+                <ul class="secondary">
+                    <li>
+                        <a href="#">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="#">Terms of Use</a>
+                    </li>
+                </ul>
+            </div>
+
+    <aside class="side-category-menu glass-effect">
+        <h4>Plant Categories</h4>
+        <ul>
+            <li><a href="#category1">Indoor Plants</a></li>
+            <li><a href="#category2">Flowering Plants</a></li>
+            <li><a href="#category3">Air Purifying Plants</a></li>
+            <li><a href="#category4">Cactus & Succulents</a></li>
+            <li><a href="#category5">Outdoor Plants</a></li>
+        </ul>
+
+        <h4 style="margin-top: 40px;">More Filters</h4>
+        <ul>
+            <li><a href="#">Price (Low to High)</a></li>
+            <li><a href="#">Price (High to Low)</a></li>
+            <li><a href="#">Best Sellers</a></li>
+        </ul>
+    </aside>
+
+    <!-- Products Display Area -->
+    <main class="category-section">
+        <!-- Top Selling Products Section -->
+        <h2 class="section-title" id="top-selling-section">Our Top Selling Plants 🌱</h2>
+        <div class="product-grid">
+            <!-- Product Card 1 -->
+            <div class="product-card glass-effect">
+                <img src="https://placehold.co/300x400/1e4038/d1fae5?text=Monstera" alt="Monstera Plant">
+                <span class="category-tag">Top Seller</span>
+                <h3>Monstera Deliciosa</h3>
+                <p class="description">A tropical plant with iconic split leaves, perfect for a statement piece.</p>
+                <div class="price">$244</div>
+                <button>Add to Cart</button>
+            </div>
+            <!-- Product Card 2 -->
+            <div class="product-card glass-effect">
+                <img src="https://placehold.co/300x400/1e4038/d1fae5?text=Snake+Plant" alt="Snake Plant">
+                <span class="category-tag">Air Purifier</span>
+                <h3>Snake Plant</h3>
+                <p class="description">Extremely low maintenance and great for air purification.</p>
+                <div class="price">$180</div>
+                <button>Add to Cart</button>
+            </div>
+            <!-- Product Card 3 -->
+            <div class="product-card glass-effect">
+                <img src="https://placehold.co/300x400/1e4038/d1fae5?text=Peace+Lily" alt="Peace Lily">
+                <span class="category-tag">Flowering</span>
+                <h3>Peace Lily</h3>
+                <p class="description">Beautiful white flowers and glossy green leaves that thrive indoors.</p>
+                <div class="price">$220</div>
+                <button>Add to Cart</button>
+            </div>
+            <!-- Product Card 4 -->
+            <div class="product-card glass-effect">
+                <img src="https://placehold.co/300x400/1e4038/d1fae5?text=ZZ+Plant" alt="ZZ Plant">
+                <span class="category-tag">Beginner Friendly</span>
+                <h3>ZZ Plant</h3>
+                <p class="description">Virtually indestructible, it's perfect for new plant parents.</p>
+                <div class="price">$200</div>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Category Wise Sections -->
+        <h2 class="section-title" id="plants-section">Our Full Collection 🌿</h2>
+
+        <!-- Category 1: Indoor Plants -->
+        <h3 id="category1" style="color: var(--green-highlight); margin-top: 50px;">Indoor Plants</h3>
+        <div class="product-grid">
+            <!-- Add 4 more product cards here, same as above -->
+             <!-- Product Card 5 -->
+            <div class="product-card glass-effect">
+                <img src="https://placehold.co/300x400/1e4038/d1fae5?text=Pothos" alt="Pothos Plant">
+                <h3>Pothos Plant</h3>
+                <p class="description">A trailing vine known for its heart-shaped leaves.</p>
+                <div class="price">$150</div>
+                <button>Add to Cart</button>
+            </div>
+            <!-- Product Card 6 -->
+            <div class="product-card glass-effect">
+                <img src="https://placehold.co/300x400/1e4038/d1fae5?text=Fiddle+Fig" alt="Fiddle Leaf Fig">
+                <h3>Fiddle Leaf Fig</h3>
+                <p class="description">Large, violin-shaped leaves make this a popular indoor tree.</p>
+                <div class="price">$450</div>
+                <button>Add to Cart</button>
+            </div>
+            <!-- Product Card 7 -->
+            <div class="product-card glass-effect">
+                <img src="https://placehold.co/300x400/1e4038/d1fae5?text=Spider+Plant" alt="Spider Plant">
+                <h3>Spider Plant</h3>
+                <p class="description">Easy to grow and produces 'babies' that can be propagated.</p>
+                <div class="price">$120</div>
+                <button>Add to Cart</button>
+            </div>
+            <!-- Product Card 8 -->
+            <div class="product-card glass-effect">
+                <img src="https://placehold.co/300x400/1e4038/d1fae5?text=Chinese+Money" alt="Chinese Money Plant">
+                <h3>Chinese Money Plant</h3>
+                <p class="description">Rounded, coin-like leaves believed to bring good fortune.</p>
+                <div class="price">$220</div>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Category 2: Flowering Plants -->
+        <h3 id="category2" style="color: var(--green-highlight); margin-top: 50px;">Flowering Plants</h3>
+        <div class="product-grid">
+            <!-- Add 4 more product cards here -->
+            <!-- Product Card 9 -->
+            <div class="product-card glass-effect">
+                <img src="https://placehold.co/300x400/1e4038/d1fae5?text=Orchid" alt="Orchid">
+                <h3>Phalaenopsis Orchid</h3>
+                <p class="description">Elegant and long-lasting flowers, available in various colors.</p>
+                <div class="price">$300</div>
+                <button>Add to Cart</button>
+            </div>
+            <!-- Product Card 10 -->
+            <div class="product-card glass-effect">
+                <img src="https://placehold.co/300x400/1e4038/d1fae5?text=Jasmine" alt="Jasmine">
+                <h3>Jasmine Plant</h3>
+                <p class="description">Known for its sweet, captivating fragrance.</p>
+                <div class="price">$190</div>
+                <button>Add to Cart</button>
+            </div>
+            <!-- Product Card 11 -->
+            <div class="product-card glass-effect">
+                <img src="https://placehold.co/300x400/1e4038/d1fae5?text=African+Violet" alt="African Violet">
+                <h3>African Violet</h3>
+                <p class="description">Compact plant with beautiful velvet-like leaves and purple flowers.</p>
+                <div class="price">$150</div>
+                <button>Add to Cart</button>
+            </div>
+            <!-- Product Card 12 -->
+            <div class="product-card glass-effect">
+                <img src="https://placehold.co/300x400/1e4038/d1fae5?text=Begonia" alt="Begonia">
+                <h3>Begonia</h3>
+                <p class="description">Brightly colored flowers and patterned foliage.</p>
+                <div class="price">$165</div>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Category 3: Air Purifying Plants -->
+        <h3 id="category3" style="color: var(--green-highlight); margin-top: 50px;">Air Purifying Plants</h3>
+        <div class="product-grid">
+            <!-- Product Card 13 -->
+            <div class="product-card glass-effect">
+                <img src="https://placehold.co/300x400/1e4038/d1fae5?text=Rubber+Plant" alt="Rubber Plant">
+                <h3>Rubber Plant</h3>
+                <p class="description">Large, glossy leaves that effectively clean the air.</p>
+                <div class="price">$250</div>
+                <button>Add to Cart</button>
+            </div>
+            <!-- Product Card 14 -->
+            <div class="product-card glass-effect">
+                <img src="https://placehold.co/300x400/1e4038/d1fae5?text=Areca+Palm" alt="Areca Palm">
+                <h3>Areca Palm</h3>
+                <p class="description">Feathery fronds that can grow quite large, purifying the air.</p>
+                <div class="price">$280</div>
+                <button>Add to Cart</button>
+            </div>
+            <!-- Product Card 15 -->
+            <div class="product-card glass-effect">
+                <img src="https://placehold.co/300x400/1e4038/d1fae5?text=Aloe+Vera" alt="Aloe Vera">
+                <h3>Aloe Vera</h3>
+                <p class="description">Not only purifies air but also has medicinal properties.</p>
+                <div class="price">$100</div>
+                <button>Add to Cart</button>
+            </div>
+            <!-- Product Card 16 -->
+            <div class="product-card glass-effect">
+                <img src="https://placehold.co/300x400/1e4038/d1fae5?text=Boston+Fern" alt="Boston Fern">
+                <h3>Boston Fern</h3>
+                <p class="description">A classic choice for purifying indoor air and adding humidity.</p>
+                <div class="price">$140</div>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+        
+        <!-- Category 4: Cactus & Succulents -->
+        <h3 id="category4" style="color: var(--green-highlight); margin-top: 50px;">Cactus & Succulents</h3>
+        <div class="product-grid">
+            <!-- Product Card 17 -->
+            <div class="product-card glass-effect">
+                <img src="https://placehold.co/300x400/1e4038/d1fae5?text=Echeveria" alt="Echeveria Succulent">
+                <h3>Echeveria</h3>
+                <p class="description">A rosette-shaped succulent that stores water in its leaves.</p>
+                <div class="price">$90</div>
+                <button>Add to Cart</button>
+            </div>
+            <!-- Product Card 18 -->
+            <div class="product-card glass-effect">
+                <img src="https://placehold.co/300x400/1e4038/d1fae5?text=Bunny+Cactus" alt="Bunny Ear Cactus">
+                <h3>Bunny Ear Cactus</h3>
+                <p class="description">A unique cactus with flat, oval pads that resemble bunny ears.</p>
+                <div class="price">$110</div>
+                <button>Add to Cart</button>
+            </div>
+            <!-- Product Card 19 -->
+            <div class="product-card glass-effect">
+                <img src="https://placehold.co/300x400/1e4038/d1fae5?text=String+of+Pearls" alt="String of Pearls">
+                <h3>String of Pearls</h3>
+                <p class="description">A beautiful trailing succulent with pea-like leaves.</p>
+                <div class="price">$130</div>
+                <button>Add to Cart</button>
+            </div>
+            <!-- Product Card 20 -->
+            <div class="product-card glass-effect">
+                <img src="https://placehold.co/300x400/1e4038/d1fae5?text=Jade+Plant" alt="Jade Plant">
+                <h3>Jade Plant</h3>
+                <p class="description">A classic succulent often seen as a symbol of good luck.</p>
+                <div class="price">$170</div>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </main>
+</div>
+
+<!-- Footer Section -->
+<footer class="main-footer" id="contact-footer">
+    <div class="container">
+        <div class="footer-logo">WearTomeGreen</div>
+        
+        <div class="footer-links-grid">
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="#top-selling-section">Top Selling Plants</a></li>
+                    <li><a href="#category1">Indoor Plants</a></li>
+                    <li><a href="#category2">Flowering Plants</a></li>
+                    <li><a href="#category3">Air Purifying Plants</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">Help Center</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-social-media">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+        </div>
+        
+        <p class="footer-copyright">&copy; 2025 WearTomeGreen. All rights reserved. Made with 💚</p>
+    </div>
+</footer>
+
+</body>
+</html>

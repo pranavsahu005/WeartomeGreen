@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WearTomeGreen</title>
+    <!-- Google Fonts ka link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons ka link - Yeh icons ke liye zaroori hai! -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Base Styles aur Colors */
+        body {
+            background-color: #0d120d;
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /*
+            Plant Store Section
+        */
+        .the-plant-store {
+            display: flex;
+            gap: 20px;
+            margin: 40px 0;
+            width: 100%;
+        }
+
+        .side-plant-menu {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px 10px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            height: fit-content;
+            /* Height ko content ke hisaab se adjust kiya */
+            width: 250px;
+        }
+
+        .side-plant-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .side-plant-menu li {
+            margin: 20px 0;
+            font-size: 18px;
+            color: #fff;
+            cursor: pointer;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            /* Icons aur text ko align kiya */
+        }
+
+        .side-plant-menu li:hover {
+            color: #ffd700;
+        }
+
+        .side-plant-menu a {
+            color: inherit;
+            text-decoration: none;
+            display: block;
+        }
+
+        .side-plant-menu .secondary li {
+            margin-top: 20px;
+            color: #b4f8b4;
+            font-size: 16px;
+        }
+        
+        /* Icons ke liye styling */
+        .side-plant-menu .fas,
+        .side-plant-menu .fa-solid {
+            margin-right: 15px;
+            /* Text aur icon ke beech gap */
+            font-size: 20px;
+            color: #6ee7b7;
+        }
+
+        .store-stuff {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .search-bar-on-top {
+            text-align: right;
+            margin-bottom: 25px;
+            width: 100%;
+        }
+
+        .search-bar-on-top input {
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            width: 30%;
+            font-size: 14px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            color: #0d120d;
+        }
+
+        .plant-list {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 70px;
+        }
+
+        .plant-box {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .plant-box img {
+            width: 150px;
+            height: 200px;
+            margin-bottom: 12px;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+
+        .plant-box:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .plant-buddy-name {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .plant-price-tag {
+            color: #6ee7b7;
+            margin-bottom: 12px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .plant-box button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 50px;
+            background: #6ee7b7;
+            color: #0d120d;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .plant-box button:hover {
+            background: #34d399;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Main Content -->
+        <main class="the-plant-store">
+            <!-- Sidebar / Side Menu -->
+            <div class="side-plant-menu">
+                <ul>
+                    <li>
+                        <i class="fas fa-home"></i>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-leaf"></i>
+                        <a href="#">Plants</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-seedling"></i>
+                        <a href="#">Seeds</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-shopping-basket"></i>
+                        <a href="#">Pots & Tools</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-info-circle"></i>
+                        <a href="#">About Us</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+                <ul class="secondary">
+                    <li>
+                        <a href="#">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="#">Terms of Use</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Store Products -->
+            <div class="store-stuff">
+                <div class="search-bar-on-top">
+                    <input type="text" placeholder="Search for plants..." />
+                </div>
+                <div class="plant-list">
+                    <!-- Plant Product 1 -->
+                    <div class="plant-box">
+                        <img src="https://placehold.co/150x200/526D82/FFF?text=Chinese+Money" alt="Chinese Money">
+                        <p class="plant-buddy-name">Chinese Money</p>
+                        <p class="plant-price-tag">$220</p>
+                        <button>Add to Cart</button>
+                    </div>
+
+                    <!-- Plant Product 2 -->
+                    <div class="plant-box">
+                        <img src="https://placehold.co/150x200/526D82/FFF?text=Monstera" alt="Monstera Deliciosa">
+                        <p class="plant-buddy-name">Monstera Deliciosa</p>
+                        <p class="plant-price-tag">$244</p>
+                        <button>Add to Cart</button>
+                    </div>
+
+                    <!-- Plant Product 3 -->
+                    <div class="plant-box">
+                        <img src="https://placehold.co/150x200/526D82/FFF?text=Monstera" alt="Monstera Deliciosa">
+                        <p class="plant-buddy-name">Monstera Deliciosa</p>
+                        <p class="plant-price-tag">$220</p>
+                        <button>Add to Cart</button>
+                    </div>
+
+                    <!-- Plant Product 4 -->
+                    <div class="plant-box">
+                        <img src="https://placehold.co/150x200/526D82/FFF?text=Monstera" alt="Monstera Deliciosa">
+                        <p class="plant-buddy-name">Monstera Deliciosa</p>
+                        <p class="plant-price-tag">$220</p>
+                        <button>Add to Cart</button>
+                    </div>
+
+                    <!-- Plant Product 5 -->
+                    <div class="plant-box">
+                        <img src="https://placehold.co/150x200/526D82/FFF?text=Monstera" alt="Monstera Deliciosa">
+                        <p class="plant-buddy-name">Monstera Deliciosa</p>
+                        <p class="plant-price-tag">$220</p>
+                        <button>Add to Cart</button>
+                    </div>
+
+                    <!-- Plant Product 6 -->
+                    <div class="plant-box">
+                        <img src="https://placehold.co/150x200/526D82/FFF?text=Monstera" alt="Monstera Deliciosa">
+                        <p class="plant-buddy-name">Monstera Deliciosa</p>
+                        <p class="plant-price-tag">$220</p>
+                        <button>Add to Cart</button>
+                    </div>
+
+                    <!-- Plant Product 7 -->
+                    <div class="plant-box">
+                        <img src="https://placehold.co/150x200/526D82/FFF?text=Monstera" alt="Monstera Deliciosa">
+                        <p class="plant-buddy-name">Monstera Deliciosa</p>
+                        <p class="plant-price-tag">$220</p>
+                        <button>Add to Cart</button>
+                    </div>
+
+                    <!-- Plant Product 8 -->
+                    <div class="plant-box">
+                        <img src="https://placehold.co/150x200/526D82/FFF?text=Monstera" alt="Monstera Deliciosa">
+                        <p class="plant-buddy-name">Monstera Deliciosa</p>
+                        <p class="plant-price-tag">$220</p>
+                        <button>Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
