@@ -4,678 +4,449 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Plant-Texture-1</title>
+    <title>WearTomeGreen — Plant Store</title>
 
-
+    <!-- Google Font (simple and readable) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
+    <!-- Font Awesome (icons for nav, footer, etc) -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-
-    <style>
-        /* -------------------------------------------------- */
-        /* Body aur basic settings */
-        /* -------------------------------------------------- */
-        body {
-            margin: 0;
-            background: #0d120d;
-            /* Page ka background color */
-            color: #ffffff;
-            /* Text ka color */
-            font-family: 'Roboto', sans-serif;
-            /* Font family */
-            line-height: 1.6;
-            padding: 0;
-        }
-
-        /* Sabhi elements par yeh setting lagao */
-        * {
-            box-sizing: border-box;
-        }
-
-        /* -------------------------------------------------- */
-        /* Top Navigation Bar */
-        /* -------------------------------------------------- */
-        .top-bar {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            /* Elements ko ek line mein rakhega */
-            align-items: center;
-            /* Elements ko beech mein karega */
-            gap: 14px;
-            /* Elements ke beech mein gap */
-            padding: 14px 22px;
-            background: rgba(13, 18, 13, 0.8);
-            /* Thoda transparent background */
-            border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-        }
-
-        .brand-name {
-            font-weight: 700;
-            font-size: 20px;
-        }
-
-        .search-box {
-            flex: 1;
-            /* Jagah lega */
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 8px 14px;
-            border-radius: 14px;
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .search-box input {
-            flex: 1;
-            background: transparent;
-            border: none;
-            outline: none;
-            color: #ffffff;
-            font-size: 14px;
-        }
-
-        .nav-icon-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.18);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            cursor: pointer;
-            transition: transform 0.25s;
-        }
-
-        .nav-icon-button:hover {
-            transform: translateY(-2px);
-            /* Button ko thoda upar uthaega */
-        }
-
-        /* -------------------------------------------------- */
-        /* Hero Section (Bada photo wala hissa) */
-        /* -------------------------------------------------- */
-        .hero-section {
-            margin: 18px;
-            padding: 40px;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            display: flex;
-            gap: 24px;
-            align-items: center;
-        }
-
-        .hero-left {
-            flex: 1;
-        }
-
-        .welcome-title {
-            font-size: 40px;
-            margin: 0 0 10px;
-        }
-
-        .welcome-text {
-            color: #cfeadf;
-            margin: 0 0 20px;
-        }
-
-        .hero-buttons-row {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .green-button {
-            padding: 12px 18px;
-            border-radius: 999px;
-            /* Gol shape */
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            font-weight: 600;
-            cursor: pointer;
-            background: #66e1a7;
-            /* Hara color */
-            color: #0a1710;
-            transition: transform 0.25s, background 0.25s;
-        }
-
-        .green-button:hover {
-            transform: translateY(-2px);
-            /* Button ko thoda upar uthaega */
-            background: #47d091;
-        }
-
-        .white-button {
-            padding: 12px 18px;
-            border-radius: 999px;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            font-weight: 600;
-            cursor: pointer;
-            background: rgba(255, 255, 255, 0.18);
-            color: #eafff4;
-            transition: transform 0.25s, background 0.25s;
-        }
-
-        .white-button:hover {
-            transform: translateY(-2px);
-            background: rgba(255, 255, 255, 0.28);
-        }
-
-        .hero-image-box {
-            width: 480px;
-            height: 260px;
-            border-radius: 22px;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            background: rgba(255, 255, 255, 0.06);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* -------------------------------------------------- */
-        /* Plant Card (Small) */
-        /* -------------------------------------------------- */
-        .section-title {
-            margin: 30px 22px 12px;
-            font-size: 28px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .section-row {
-            margin: 0 18px 10px;
-            padding: 14px;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            display: flex;
-            gap: 18px;
-            flex-wrap: wrap;
-        }
-
-        .small-plant-card {
-            width: 240px;
-            padding: 14px;
-            border-radius: 18px;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            background: rgba(255, 255, 255, 0.12);
-            cursor: pointer;
-            transition: transform 0.25s, background 0.25s;
-        }
-
-        .small-plant-card:hover {
-            transform: translateY(-6px);
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .small-plant-photo {
-            width: 100%;
-            height: 150px;
-            border-radius: 14px;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            object-fit: cover;
-            display: block;
-        }
-
-        .small-plant-name {
-            margin: 10px 0 2px;
-            font-weight: 700;
-        }
-
-        .small-plant-info {
-            font-size: 13px;
-            opacity: 0.9;
-        }
-
-        .small-price-row {
-            margin-top: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .buy-now-button {
-            padding: 8px 12px;
-            border-radius: 999px;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            background: #9ef7c2;
-            color: #0a1710;
-            font-weight: 700;
-            cursor: pointer;
-            transition: transform 0.25s;
-        }
-
-        .buy-now-button:hover {
-            transform: translateY(-2px);
-        }
-
-        /* -------------------------------------------------- */
-        /* Products aur Sidebar Section */
-        /* -------------------------------------------------- */
-        .main-shop-area {
-            display: flex;
-            gap: 18px;
-            margin: 10px 18px 40px;
-            align-items: flex-start;
-        }
-
-        /* Left Side Filter Menu */
-        .left-filter-menu {
-            width: 260px;
-            padding: 16px;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            position: sticky;
-            top: 78px;
-        }
-
-        .filter-title {
-            font-weight: 700;
-            margin-bottom: 8px;
-            display: flex;
-            gap: 8px;
-            align-items: center;
-        }
-
-        .filter-group {
-            margin-bottom: 16px;
-            padding-bottom: 12px;
-            border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
-        }
-
-        .filter-group h4 {
-            margin: 0 0 8px;
-            font-size: 16px;
-            color: #d8ffe9;
-        }
-
-        .filter-chips {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .filter-chip {
-            padding: 6px 10px;
-            border-radius: 999px;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            background: rgba(255, 255, 255, 0.14);
-            font-size: 13px;
-            cursor: pointer;
-            transition: transform 0.25s, background 0.25s;
-        }
-
-        .filter-chip:hover {
-            transform: translateY(-2px);
-            background: rgba(255, 255, 255, 0.22);
-        }
-
-        /* Right Side Product Grid */
-        .product-area {
-            flex: 1;
-        }
-
-        .category-tabs {
-            margin-bottom: 12px;
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .tab-button {
-            padding: 8px 14px;
-            border-radius: 999px;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            background: rgba(255, 255, 255, 0.16);
-            cursor: pointer;
-            font-weight: 600;
-            transition: transform 0.25s, background 0.25s;
-        }
-
-        .tab-button:hover {
-            transform: translateY(-2px);
-            background: rgba(255, 255, 255, 0.25);
-        }
-
-        .product-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            align-items: stretch;
-        }
-
-        .plant-card {
-            width: 220px;
-            padding: 14px;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            border-radius: 18px;
-            background: rgba(255, 255, 255, 0.12);
-            transition: transform 0.25s, background 0.25s;
-        }
-
-        .plant-card:hover {
-            transform: translateY(-6px);
-            background: rgba(255, 255, 255, 0.20);
-        }
-
-        .plant-photo {
-            width: 100%;
-            height: 160px;
-            border-radius: 14px;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            object-fit: cover;
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .plant-name {
-            margin: 8px 0 0;
-            font-weight: 700;
-        }
-
-        .plant-description {
-            font-size: 13px;
-            opacity: 0.92;
-            min-height: 40px;
-        }
-
-        .plant-details {
-            font-size: 12px;
-            opacity: 0.85;
-            margin: 6px 0;
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .plant-details span {
-            padding: 2px 8px;
-            border-radius: 999px;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            background: rgba(255, 255, 255, 0.18);
-        }
-
-        .price-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 6px;
-        }
-
-        .price {
-            font-weight: 800;
-            color: #9ef7c2;
-        }
-
-        .add-to-cart-button {
-            padding: 8px 12px;
-            border-radius: 999px;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            background: #66e1a7;
-            color: #0c1710;
-            font-weight: 700;
-            cursor: pointer;
-        }
-
-        /* -------------------------------------------------- */
-        /* Footer */
-        /* -------------------------------------------------- */
-        .main-footer {
-            margin-top: 40px;
-            padding: 40px 18px;
-            border-top: 1px solid rgba(255, 255, 255, 0.25);
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .footer-top {
-            display: flex;
-            gap: 18px;
-            flex-wrap: wrap;
-            align-items: flex-start;
-        }
-
-        .footer-card {
-            flex: 1 1 260px;
-            padding: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            border-radius: 18px;
-            background: rgba(255, 255, 255, 0.10);
-        }
-
-        .footer-title {
-            margin: 0 0 10px;
-            font-weight: 800;
-            display: flex;
-            gap: 8px;
-            align-items: center;
-            color: #dfffe9;
-        }
-
-        .footer-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .footer-list li {
-            margin: 6px 0;
-            opacity: 0.92;
-        }
-
-        .footer-social-icons {
-            display: flex;
-            gap: 10px;
-            margin-top: 8px;
-        }
-
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            background: rgba(255, 255, 255, 0.18);
-            transition: transform 0.25s;
-        }
-
-        .social-icon:hover {
-            transform: translateY(-2px);
-        }
-
-        .footer-bottom {
-            margin-top: 18px;
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            opacity: 0.85;
-        }
-
-        .small-text {
-            font-size: 12px;
-            opacity: 0.9;
-        }
-    </style>
+    <link rel="stylesheet" href="/CSS/Plant-Product -Texture.css">
+   
 </head>
 
 <body>
-    <header class="top-bar">
-        <div class="search-box">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" placeholder="Search plants..." />
-        </div>
-        <div class="brand-name">WearTomeGreen</div>
-        <button class="nav-icon-button" title="Cart"><i class="fa-solid fa-cart-shopping"></i></button>
-    </header>
-
-    <section class="hero-section">
-        <div class="hero-left">
-            <h1 class="welcome-title">Welcome to your calm green corner 🌿</h1>
-            <p class="welcome-text">Order a plant and get an easy care checklist — simple, peaceful, and fresh.</p>
-            <div class="hero-buttons-row">
-                <button class="green-button"><i class="fa-solid fa-bag-shopping"></i> Shop Plants</button>
-                <button class="white-button"><i class="fa-solid fa-leaf"></i> Explore Categories</button>
+    <!-- =========================== NAV BAR =========================== -->
+    <header class="nav-bar">
+        <div class="nav-left">
+            <button class="nav-btn" title="Back"><i class="fa-solid fa-angle-left"></i></button>
+            <button class="nav-btn" title="Menu"><i class="fa-solid fa-bars"></i></button>
+            <div class="brand-logo">
+                <i class="fa-solid fa-seedling"></i>
+                <div class="brand-name">WearTomeGreen</div>
             </div>
         </div>
-        <div class="hero-image-box">
-            <p style="opacity: 0.85; font-size: 13px;">Yaha apni store ki photo daal sakte ho.</p>
+
+        <div class="nav-search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input class="nav-search-input" type="text" placeholder="Search plants, pots, seeds... (static UI)" />
+        </div>
+
+        <div class="nav-right">
+            <button class="nav-btn" title="Profile"><i class="fa-regular fa-user"></i></button>
+            <button class="nav-btn" title="Cart"><i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+    </header>
+
+    <!-- =========================== HERO / WELCOME ==================== -->
+    <section class="hero-box">
+        <div class="hero-left">
+            <h1 class="welcome-title">Welcome to your calm green corner 🌿</h1>
+            <p class="welcome-sub">Order a plant and get an easy care checklist — simple, peaceful, and fresh. (Upar
+                wali photo box me apni image daal sakte ho.)</p>
+            <div class="hero-buttons">
+                <button class="green-btn"><i class="fa-solid fa-bag-shopping"></i> Shop Plants</button>
+                <button class="light-btn"><i class="fa-solid fa-leaf"></i> Explore Categories</button>
+            </div>
+        </div>
+        <div class="hero-right">
+            <!-- HERO IMAGE SLOT: put your own image path here -->
+            <div class="image-note">Hero Image Area — yaha apni store ki plant photo ka background rakh do.</div>
         </div>
     </section>
 
-    <h2 class="section-title"><i class="fa-solid fa-star"></i> Top Selling Plants</h2>
-    <div class="section-row">
-        <article class="small-plant-card">
-            <img class="small-plant-photo" src="https://placehold.co/400x300/1b3b2a/ffffff?text=Top+1"
+    <!-- =========================== TOP SELLING ======================= -->
+    <h2 class="section-title"><i class="fa-solid fa-star"></i> Our Top Selling</h2>
+    <div class="top-selling-row">
+        <!-- 4 small cards: replace src with real images anytime -->
+        <article class="plant-card-small">
+            <img class="plant-photo-small" src="https://placehold.co/400x300/1b3b2a/ffffff?text=Top+1"
                 alt="Top Plant 1" />
-            <div class="small-plant-name">Calathea Plant</div>
-            <div class="small-plant-info">Soft leaves • Low light • Easy care</div>
-            <div class="small-price-row"><span class="price">Rs. 309/-</span><button class="buy-now-button">Buy</button>
+            <div class="plant-name-small">Calathea Plant</div>
+            <div class="plant-info-small">Soft leaves • Low light • Easy care</div>
+            <div class="price-line-small"><span class="price-tag">Rs. 309/-</span><button class="buy-btn">Buy</button>
             </div>
         </article>
-        <article class="small-plant-card">
-            <img class="small-plant-photo" src="https://placehold.co/400x300/214231/ffffff?text=Top+2"
+        <article class="plant-card-small">
+            <img class="plant-photo-small" src="https://placehold.co/400x300/214231/ffffff?text=Top+2"
                 alt="Top Plant 2" />
-            <div class="small-plant-name">Desk Plant</div>
-            <div class="small-plant-info">Cute pot • Work table buddy</div>
-            <div class="small-price-row"><span class="price">Rs. 359/-</span><button class="buy-now-button">Buy</button>
+            <div class="plant-name-small">Desk Plant</div>
+            <div class="plant-info-small">Cute pot • Work table buddy</div>
+            <div class="price-line-small"><span class="price-tag">Rs. 359/-</span><button class="buy-btn">Buy</button>
             </div>
         </article>
-        <article class="small-plant-card">
-            <img class="small-plant-photo" src="https://placehold.co/400x300/1a3a29/ffffff?text=Top+3"
+        <article class="plant-card-small">
+            <img class="plant-photo-small" src="https://placehold.co/400x300/1a3a29/ffffff?text=Top+3"
                 alt="Top Plant 3" />
-            <div class="small-plant-name">Calathea AI</div>
-            <div class="small-plant-info">Patterned leaves • Calm vibe</div>
-            <div class="small-price-row"><span class="price">Rs. 399/-</span><button class="buy-now-button">Buy</button>
+            <div class="plant-name-small">Calathea AI</div>
+            <div class="plant-info-small">Patterned leaves • Calm vibe</div>
+            <div class="price-line-small"><span class="price-tag">Rs. 399/-</span><button class="buy-btn">Buy</button>
             </div>
         </article>
-        <article class="small-plant-card">
-            <img class="small-plant-photo" src="https://placehold.co/400x300/173525/ffffff?text=Top+4"
+        <article class="plant-card-small">
+            <img class="plant-photo-small" src="https://placehold.co/400x300/173525/ffffff?text=Top+4"
                 alt="Top Plant 4" />
-            <div class="small-plant-name">Show Plant</div>
-            <div class="small-plant-info">Center table focus plant</div>
-            <div class="small-price-row"><span class="price">Rs. 759/-</span><button class="buy-now-button">Buy</button>
+            <div class="plant-name-small">Show Plant</div>
+            <div class="plant-info-small">Center table focus plant</div>
+            <div class="price-line-small"><span class="price-tag">Rs. 759/-</span><button class="buy-btn">Buy</button>
             </div>
         </article>
     </div>
 
-    <h2 class="section-title"><i class="fa-solid fa-seedling"></i> All Plants</h2>
+    <div class="space"></div>
 
-    <section class="main-shop-area">
-        <aside class="left-filter-menu">
-            <div class="filter-title"><i class="fa-solid fa-sliders"></i> Filter Box</div>
-            <p style="font-size: 13px; opacity: 0.9;">Yaha sirf UI hai (yeh kaam nahi karega)</p>
+    <!-- =========================== PRODUCTS + SIDEBAR ================= -->
+    <h2 class="section-title"><i class="fa-solid fa-seedling"></i> All Plants (Category Wise)</h2>
 
-            <div class="filter-group">
+    <section class="big-shop-area">
+        <!-- LEFT GLASS SIDE MENU (filters/extra info like Flipkart) -->
+        <aside class="left-menu">
+            <div class="left-title"><i class="fa-solid fa-sliders"></i> Filter Box</div>
+            <div class="left-note">Yaha sirf UI hai (pure CSS). Radio tabs se category filter niche kaam karega.</div>
+
+            <div class="left-group">
+                <h4>Quick Links</h4>
+                <div class="left-chip-row">
+                    <span class="left-chip">Home</span>
+                    <span class="left-chip">Plants</span>
+                    <span class="left-chip">Seeds</span>
+                    <span class="left-chip">Pots & Tools</span>
+                </div>
+            </div>
+
+            <div class="left-group">
                 <h4>Categories</h4>
-                <div class="filter-chips">
-                    <span class="filter-chip">All</span>
-                    <span class="filter-chip">Indoor</span>
-                    <span class="filter-chip">Outdoor</span>
-                    <span class="filter-chip">Cacti</span>
+                <div class="left-chip-row">
+                    <span class="left-chip">Category 1</span>
+                    <span class="left-chip">Category 2</span>
+                    <span class="left-chip">Category 3</span>
+                    <span class="left-chip">Category 4</span>
                 </div>
             </div>
 
-            <div class="filter-group">
+            <div class="left-group">
+                <h4>Leaf Type</h4>
+                <div class="left-chip-row">
+                    <span class="left-chip">Broad</span>
+                    <span class="left-chip">Thin</span>
+                    <span class="left-chip">Pattern</span>
+                    <span class="left-chip">Spiky</span>
+                </div>
+            </div>
+
+            <div class="left-group">
+                <h4>Temperature</h4>
+                <div class="left-chip-row">
+                    <span class="left-chip">18–22°C</span>
+                    <span class="left-chip">22–26°C</span>
+                    <span class="left-chip">26–30°C</span>
+                </div>
+            </div>
+
+            <div class="left-group">
                 <h4>Care Level</h4>
-                <div class="filter-chips">
-                    <span class="filter-chip">Easy</span>
-                    <span class="filter-chip">Medium</span>
-                    <span class="filter-chip">Hard</span>
+                <div class="left-chip-row">
+                    <span class="left-chip">Easy</span>
+                    <span class="left-chip">Medium</span>
+                    <span class="left-chip">Pro</span>
                 </div>
             </div>
 
+            <div class="left-group">
+                <h4>Price Range</h4>
+                <div class="left-chip-row">
+                    <span class="left-chip">Rs. 199–399</span>
+                    <span class="left-chip">Rs. 399–699</span>
+                    <span class="left-chip">Rs. 699–999</span>
+                </div>
+            </div>
+
+            <div class="left-group">
+                <h4>Info & Policy</h4>
+                <ul class="foot-list">
+                    <li>Delivery in 2–5 days</li>
+                    <li>Easy return & exchange</li>
+                    <li>Secure payment</li>
+                    <li>24×7 support</li>
+                </ul>
+            </div>
         </aside>
 
-        <div class="product-area">
-            <div class="category-tabs">
-                <button class="tab-button"><i class="fa-solid fa-layer-group"></i> All Plants</button>
-                <button class="tab-button">Indoor</button>
-                <button class="tab-button">Outdoor</button>
-                <button class="tab-button">Small Pots</button>
+        <!-- RIGHT SIDE: CATEGORY TABS + PRODUCT GRID -->
+        <div class="product-side">
+            <div class="filter-tabs">
+                <!-- radios for pure CSS filtering -->
+                <input class="real-radio" type="radio" name="cats" id="show-all" checked>
+                <label class="tab-btn" for="show-all"><i class="fa-solid fa-layer-group"></i> All</label>
+
+                <input class="real-radio" type="radio" name="cats" id="show-cat1">
+                <label class="tab-btn" for="show-cat1">Category 1</label>
+
+                <input class="real-radio" type="radio" name="cats" id="show-cat2">
+                <label class="tab-btn" for="show-cat2">Category 2</label>
+
+                <input class="real-radio" type="radio" name="cats" id="show-cat3">
+                <label class="tab-btn" for="show-cat3">Category 3</label>
             </div>
 
-            <div class="product-grid">
-                <article class="plant-card">
-                    <img class="plant-photo" src="https://placehold.co/500x380/244233/ffffff?text=Plant+1"
-                        alt="Plant" />
-                    <h3 class="plant-name">Aucuba</h3>
-                    <p class="plant-description">Brief description of this plant. Easy care indoor buddy.</p>
-                    <div class="plant-details"><span>Care: Easy</span><span>Type: Indoor</span></div>
-                    <div class="price-row"><span class="price">Rs. 299/-</span><button
-                            class="add-to-cart-button">Add</button></div>
-                </article>
+            <div class="filter-wrap">
+                <!-- radios duplicated here to satisfy sibling CSS selector relation -->
+                <input class="real-radio" type="radio" name="cats2" id="show-all" checked>
+                <input class="real-radio" type="radio" name="cats2" id="show-cat1">
+                <input class="real-radio" type="radio" name="cats2" id="show-cat2">
+                <input class="real-radio" type="radio" name="cats2" id="show-cat3">
 
-                <article class="plant-card">
-                    <img class="plant-photo" src="https://placehold.co/500x380/203a2c/ffffff?text=Plant+2"
-                        alt="Plant" />
-                    <h3 class="plant-name">Dracaena</h3>
-                    <p class="plant-description">Tall, clean look for corners. Medium care.</p>
-                    <div class="plant-details"><span>Care: Medium</span><span>Type: Indoor</span></div>
-                    <div class="price-row"><span class="price">Rs. 359/-</span><button
-                            class="add-to-cart-button">Add</button></div>
-                </article>
+                <div class="product-grid">
+                    <!-- 20 PRODUCT CARDS | put your own images later -->
+                    <!-- give classes cat1 / cat2 / cat3 to control filter -->
 
-                <article class="plant-card">
-                    <img class="plant-photo" src="https://placehold.co/500x380/1a3a29/ffffff?text=Plant+3"
-                        alt="Plant" />
-                    <h3 class="plant-name">Aglaonema Silver</h3>
-                    <p class="plant-description">Silver patterned leaves. Low light friendly.</p>
-                    <div class="plant-details"><span>Care: Easy</span><span>Type: Indoor</span></div>
-                    <div class="price-row"><span class="price">Rs. 249/-</span><button
-                            class="add-to-cart-button">Add</button></div>
-                </article>
+                    <article class="plant-card cat1">
+                        <img class="plant-photo" src="https://placehold.co/500x380/244233/ffffff?text=Plant+1"
+                            alt="Plant" />
+                        <h3 class="plant-name">Aucuba</h3>
+                        <p class="plant-small-text">Brief description of this plant. Easy care indoor buddy.</p>
+                        <div class="plant-meta"><span>Leaf: Broad</span><span>Temp: 22–26°C</span><span>Cat 1</span>
+                        </div>
+                        <div class="price-line"><span class="price-tag">Rs. 299/-</span><button
+                                class="add-btn">Add</button></div>
+                    </article>
 
-                <article class="plant-card">
-                    <img class="plant-photo" src="https://placehold.co/500x380/214231/ffffff?text=Plant+4"
-                        alt="Plant" />
-                    <h3 class="plant-name">Calla</h3>
-                    <p class="plant-description">Graceful shape, bright corner fit.</p>
-                    <div class="plant-details"><span>Care: Easy</span><span>Type: Indoor</span></div>
-                    <div class="price-row"><span class="price">Rs. 319/-</span><button
-                            class="add-to-cart-button">Add</button></div>
-                </article>
+                    <article class="plant-card cat2">
+                        <img class="plant-photo" src="https://placehold.co/500x380/203a2c/ffffff?text=Plant+2"
+                            alt="Plant" />
+                        <h3 class="plant-name">Dracaena</h3>
+                        <p class="plant-small-text">Tall, clean look for corners. Medium care.</p>
+                        <div class="plant-meta"><span>Leaf: Thin</span><span>Temp: 22–26°C</span><span>Cat 2</span>
+                        </div>
+                        <div class="price-line"><span class="price-tag">Rs. 359/-</span><button
+                                class="add-btn">Add</button></div>
+                    </article>
 
-                <article class="plant-card">
-                    <img class="plant-photo" src="https://placehold.co/500x380/173525/ffffff?text=Plant+5"
-                        alt="Plant" />
-                    <h3 class="plant-name">Asplenium</h3>
-                    <p class="plant-description">Wavy leaves, fresh vibe. Easy care.</p>
-                    <div class="plant-details"><span>Care: Easy</span><span>Type: Indoor</span></div>
-                    <div class="price-row"><span class="price">Rs. 339/-</span><button
-                            class="add-to-cart-button">Add</button></div>
-                </article>
+                    <article class="plant-card cat3">
+                        <img class="plant-photo" src="https://placehold.co/500x380/1a3a29/ffffff?text=Plant+3"
+                            alt="Plant" />
+                        <h3 class="plant-name">Aglaonema Silver</h3>
+                        <p class="plant-small-text">Silver patterned leaves. Low light friendly.</p>
+                        <div class="plant-meta"><span>Leaf: Pattern</span><span>Temp: 18–22°C</span><span>Cat 3</span>
+                        </div>
+                        <div class="price-line"><span class="price-tag">Rs. 249/-</span><button
+                                class="add-btn">Add</button></div>
+                    </article>
+
+                    <article class="plant-card cat1">
+                        <img class="plant-photo" src="https://placehold.co/500x380/214231/ffffff?text=Plant+4"
+                            alt="Plant" />
+                        <h3 class="plant-name">Calla</h3>
+                        <p class="plant-small-text">Graceful shape, bright corner fit.</p>
+                        <div class="plant-meta"><span>Leaf: Broad</span><span>Temp: 22–26°C</span><span>Cat 1</span>
+                        </div>
+                        <div class="price-line"><span class="price-tag">Rs. 319/-</span><button
+                                class="add-btn">Add</button></div>
+                    </article>
+
+                    <article class="plant-card cat2">
+                        <img class="plant-photo" src="https://placehold.co/500x380/173525/ffffff?text=Plant+5"
+                            alt="Plant" />
+                        <h3 class="plant-name">Asplenium</h3>
+                        <p class="plant-small-text">Wavy leaves, fresh vibe. Easy care.</p>
+                        <div class="plant-meta"><span>Leaf: Broad</span><span>Temp: 22–26°C</span><span>Cat 2</span>
+                        </div>
+                        <div class="price-line"><span class="price-tag">Rs. 339/-</span><button
+                                class="add-btn">Add</button></div>
+                    </article>
+
+                    <article class="plant-card cat3">
+                        <img class="plant-photo" src="https://placehold.co/500x380/1b3b2a/ffffff?text=Plant+6"
+                            alt="Plant" />
+                        <h3 class="plant-name">Cordillina Kiwi</h3>
+                        <p class="plant-small-text">Color edges • looks unique.</p>
+                        <div class="plant-meta"><span>Leaf: Thin</span><span>Temp: 26–30°C</span><span>Cat 3</span>
+                        </div>
+                        <div class="price-line"><span class="price-tag">Rs. 399/-</span><button
+                                class="add-btn">Add</button></div>
+                    </article>
+
+                    <article class="plant-card cat1">
+                        <img class="plant-photo" src="https://placehold.co/500x380/274a36/ffffff?text=Plant+7"
+                            alt="Plant" />
+                        <h3 class="plant-name">Calathea Zebrina</h3>
+                        <p class="plant-small-text">Striped leaves • peaceful corner plant.</p>
+                        <div class="plant-meta"><span>Leaf: Pattern</span><span>Temp: 18–22°C</span><span>Cat 1</span>
+                        </div>
+                        <div class="price-line"><span class="price-tag">Rs. 309/-</span><button
+                                class="add-btn">Add</button></div>
+                    </article>
+
+                    <article class="plant-card cat2">
+                        <img class="plant-photo" src="https://placehold.co/500x380/193225/ffffff?text=Plant+8"
+                            alt="Plant" />
+                        <h3 class="plant-name">Fatsia Japonica</h3>
+                        <p class="plant-small-text">Big leaves • tropical feeling.</p>
+                        <div class="plant-meta"><span>Leaf: Broad</span><span>Temp: 22–26°C</span><span>Cat 2</span>
+                        </div>
+                        <div class="price-line"><span class="price-tag">Rs. 359/-</span><button
+                                class="add-btn">Add</button></div>
+                    </article>
+
+                    <article class="plant-card cat3">
+                        <img class="plant-photo" src="https://placehold.co/500x380/1a3a29/ffffff?text=Plant+9"
+                            alt="Plant" />
+                        <h3 class="plant-name">Calathea</h3>
+                        <p class="plant-small-text">Compact pot • study table friendly.</p>
+                        <div class="plant-meta"><span>Leaf: Pattern</span><span>Temp: 22–26°C</span><span>Cat 3</span>
+                        </div>
+                        <div class="price-line"><span class="price-tag">Rs. 239/-</span><button
+                                class="add-btn">Add</button></div>
+                    </article>
+
+                    <article class="plant-card cat1">
+                        <img class="plant-photo" src="https://placehold.co/500x380/244233/ffffff?text=Plant+10"
+                            alt="Plant" />
+                        <h3 class="plant-name">Peace Lily</h3>
+                        <p class="plant-small-text">White bloom • air purifier.</p>
+                        <div class="plant-meta"><span>Leaf: Broad</span><span>Temp: 22–26°C</span><span>Cat 1</span>
+                        </div>
+                        <div class="price-line"><span class="price-tag">Rs. 289/-</span><button
+                                class="add-btn">Add</button></div>
+                    </article>
+
+                    <article class="plant-card cat2">
+                        <img class="plant-photo" src="https://placehold.co/500x380/203a2c/ffffff?text=Plant+11"
+                            alt="Plant" />
+                        <h3 class="plant-name">Snake Plant</h3>
+                        <p class="plant-small-text">Hardy • perfect for beginners.</p>
+                        <div class="plant-meta"><span>Leaf: Spiky</span><span>Temp: 26–30°C</span><span>Cat 2</span>
+                        </div>
+                        <div class="price-line"><span class="price-tag">Rs. 249/-</span><button
+                                class="add-btn">Add</button></div>
+                    </article>
+
+                    <article class="plant-card cat3">
+                        <img class="plant-photo" src="https://placehold.co/500x380/173525/ffffff?text=Plant+12"
+                            alt="Plant" />
+                        <h3 class="plant-name">Monstera</h3>
+                        <p class="plant-small-text">Swiss cheese leaves • trendy.</p>
+                        <div class="plant-meta"><span>Leaf: Broad</span><span>Temp: 22–26°C</span><span>Cat 3</span>
+                        </div>
+                        <div class="price-line"><span class="price-tag">Rs. 449/-</span><button
+                                class="add-btn">Add</button></div>
+                    </article>
+
+                    <article class="plant-card cat1">
+                        <img class="plant-photo" src="https://placehold.co/500x380/1b3b2a/ffffff?text=Plant+13"
+                            alt="Plant" />
+                        <h3 class="plant-name">Areca Palm</h3>
+                        <p class="plant-small-text">Soft fronds • living room fresh.</p>
+                        <div class="plant-meta"><span>Leaf: Thin</span><span>Temp: 22–26°C</span><span>Cat 1</span>
+                        </div>
+                        <div class="price-line"><span class="price-tag">Rs. 599/-</span><button
+                                class="add-btn">Add</button></div>
+                    </article>
+
+                    <article class="plant-card cat2">
+                        <img class="plant-photo" src="https://placehold.co/500x380/214231/ffffff?text=Plant+14"
+                            alt="Plant" />
+                        <h3 class="plant-name">Pothos</h3>
+                        <p class="plant-small-text">Trailing vine • low light ok.</p>
+                        <div class="plant-meta"><span>Leaf: Broad</span><span>Temp: 22–26°C</span><span>Cat 2</span>
+                        </div>
+                        <div class="price-line"><span class="price-tag">Rs. 199/-</span><button
+                                class="add-btn">Add</button></div>
+                    </article>
+
+                    <article class="plant-card cat3">
+                        <img class="plant-photo" src="https://placehold.co/500x380/274a36/ffffff?text=Plant+15"
+                            alt="Plant" />
+                        <h3 class="plant-name">ZZ Plant</h3>
+                        <p class="plant-small-text">Tough plant • survives neglect.</p>
+                        <div class="plant-meta"><span>Leaf: Thick</span><span>Temp: 22–26°C</span><span>Cat 3</span>
+                        </div>
+                        <div class="price-line"><span class="price-tag">Rs. 449/-</span><button
+                                class="add-btn">Add</button></div>
+                    </article>
+
+                    <article class="plant-card cat1">
+                        <img class="plant-photo" src="https://placehold.co/500x380/193225/ffffff?text=Plant+16"
+                            alt="Plant" />
+                        <h3 class="plant-name">Rubber Plant</h3>
+                        <p class="plant-small-text">Glossy leaves • bold look.</p>
+                        <div class="plant-meta"><span>Leaf: Broad</span><span>Temp: 22–26°C</span><span>Cat 1</span>
+                        </div>
+                        <div class="price-line"><span class="price-tag">Rs. 549/-</span><button
+                                class="add-btn">Add</button></div>
+                    </article>
+
+                    <article class="plant-card cat2">
+                        <img class="plant-photo" src="https://placehold.co/500x380/1a3a29/ffffff?text=Plant+17"
+                            alt="Plant" />
+                        <h3 class="plant-name">Aloe Vera</h3>
+                        <p class="plant-small-text">Medicinal • sunny window best.</p>
+                        <div class="plant-meta"><span>Leaf: Spiky</span><span>Temp: 26–30°C</span><span>Cat 2</span>
+                        </div>
+                        <div class="price-line"><span class="price-tag">Rs. 179/-</span><button
+                                class="add-btn">Add</button></div>
+                    </article>
+
+                    <article class="plant-card cat3">
+                        <img class="plant-photo" src="https://placehold.co/500x380/203a2c/ffffff?text=Plant+18"
+                            alt="Plant" />
+                        <h3 class="plant-name">Spider Plant</h3>
+                        <p class="plant-small-text">Air cleaner • easy propagation.</p>
+                        <div class="plant-meta"><span>Leaf: Thin</span><span>Temp: 18–22°C</span><span>Cat 3</span>
+                        </div>
+                        <div class="price-line"><span class="price-tag">Rs. 229/-</span><button
+                                class="add-btn">Add</button></div>
+                    </article>
+
+                    <article class="plant-card cat1">
+                        <img class="plant-photo" src="https://placehold.co/500x380/173525/ffffff?text=Plant+19"
+                            alt="Plant" />
+                        <h3 class="plant-name">Philodendron</h3>
+                        <p class="plant-small-text">Heart leaves • climber style.</p>
+                        <div class="plant-meta"><span>Leaf: Broad</span><span>Temp: 22–26°C</span><span>Cat 1</span>
+                        </div>
+                        <div class="price-line"><span class="price-tag">Rs. 299/-</span><button
+                                class="add-btn">Add</button></div>
+                    </article>
+
+                    <article class="plant-card cat2">
+                        <img class="plant-photo" src="https://placehold.co/500x380/244233/ffffff?text=Plant+20"
+                            alt="Plant" />
+                        <h3 class="plant-name">Cactus Mini</h3>
+                        <p class="plant-small-text">Direct sun • almost no care.</p>
+                        <div class="plant-meta"><span>Leaf: Spiky</span><span>Temp: 26–30°C</span><span>Cat 2</span>
+                        </div>
+                        <div class="price-line"><span class="price-tag">Rs. 159/-</span><button
+                                class="add-btn">Add</button></div>
+                    </article>
+
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="main-footer">
+    <!-- =========================== BIG FOOTER ========================= -->
+    <footer class="big-footer">
         <div class="footer-top">
-            <div class="footer-card">
-                <div class="footer-title"><i class="fa-solid fa-seedling"></i> WearTomeGreen</div>
-                <p class="muted" style="opacity: 0.85;">A calm, glassy, green plant shop UI. Replace placeholder images
-                    with your own.</p>
-                <div class="footer-social-icons">
-                    <a class="social-icon" href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a class="social-icon" href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                    <a class="social-icon" href="#" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a class="social-icon" href="#" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
-                    <a class="social-icon" href="#" title="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
-                    <a class="social-icon" href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <div class="foot-card">
+                <div class="foot-title"><i class="fa-solid fa-seedling"></i> WearTomeGreen</div>
+                <p class="muted">A calm, glassy, green plant shop UI. Replace placeholder images with your own. Hover
+                    effects everywhere for a futuristic look.</p>
+                <div class="foot-social">
+                    <a class="foot-icon" href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a class="foot-icon" href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a class="foot-icon" href="#" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a class="foot-icon" href="#" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a class="foot-icon" href="#" title="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+                    <a class="foot-icon" href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
             </div>
 
-            <div class="footer-card">
-                <div class="footer-title"><i class="fa-solid fa-list"></i> Quick Menu</div>
-                <ul class="footer-list">
+            <div class="foot-card">
+                <div class="foot-title"><i class="fa-solid fa-list"></i> Quick Menu</div>
+                <ul class="foot-list">
                     <li>Catalog</li>
                     <li>Blog</li>
                     <li>About Us</li>
@@ -685,9 +456,9 @@
                 </ul>
             </div>
 
-            <div class="footer-card">
-                <div class="footer-title"><i class="fa-solid fa-location-dot"></i> Store Locations</div>
-                <ul class="footer-list">
+            <div class="foot-card">
+                <div class="foot-title"><i class="fa-solid fa-location-dot"></i> Store Locations</div>
+                <ul class="foot-list">
                     <li>Bhopal — MP Nagar Zone 1</li>
                     <li>Indore — Vijay Nagar</li>
                     <li>Gwalior — City Center</li>
@@ -696,22 +467,24 @@
                 </ul>
             </div>
 
-            <div class="footer-card">
-                <div class="footer-title"><i class="fa-solid fa-headset"></i> Contact</div>
-                <ul class="footer-list">
+            <div class="foot-card">
+                <div class="foot-title"><i class="fa-solid fa-headset"></i> Contact</div>
+                <ul class="foot-list">
                     <li>Phone: +91-9876543210</li>
                     <li>Email: plantstore@example.com</li>
                     <li>Open: Mon–Sat 10am–7pm</li>
                 </ul>
-                <p class="small-text">Privacy Policy • User Agreement • Terms of Exchange & Refund</p>
+                <p class="tiny-note">Privacy Policy • User Agreement • Terms of Exchange & Refund</p>
             </div>
         </div>
 
         <div class="footer-bottom">
             <div>© 2025 WearTomeGreen. All rights reserved.</div>
-            <div class="small-text">Built with simple HTML + CSS (no JS, no responsive).</div>
+            <div class="tiny-note">Built with simple HTML + CSS (no JS, no responsive). Flex-wrap grid shows 4–5 cards
+                per row on wide screens.</div>
         </div>
     </footer>
+
 </body>
 
 </html>

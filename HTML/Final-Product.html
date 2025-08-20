@@ -11,498 +11,7 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <style>
-        body {
-            background-color: #08110c;
-            color: #e0f2e8;
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/IMAGES/green (12).jpg');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-        }
-
-        .main-wrapper {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-            backdrop-filter: blur(2px);
-            -webkit-backdrop-filter: blur(2px);
-        }
-
-        .glass-box {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-            border-radius: 15px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .glass-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 48px 0 rgba(0, 0, 0, 0.45);
-        }
-
-        .top-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 40px;
-            background: rgba(12, 26, 18, 0.7);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo-text {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.5em;
-            font-weight: 700;
-            color: #34d399;
-            text-decoration: none;
-        }
-
-        .menu-links li {
-            list-style: none;
-            display: inline-block;
-            margin-left: 25px;
-        }
-
-        .menu-links a {
-            color: #e0f2e8;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .menu-links a:hover {
-            color: #34d399;
-        }
-
-        .nav-icons a {
-            color: #e0f2e8;
-            margin-left: 15px;
-            transition: color 0.3s ease;
-        }
-
-        .nav-icons a:hover {
-            color: #34d399;
-        }
-
-        .hero-section {
-            margin: 18px;
-            padding: 40px;
-            border-radius: 15px;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(8px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
-            display: flex;
-            gap: 24px;
-            align-items: center;
-        }
-
-        .hero-left {
-            flex: 1;
-        }
-
-        .hero-heading {
-            font-size: 40px;
-            line-height: 1.1;
-            margin: 0 0 10px;
-        }
-
-        .hero-subheading {
-            color: #cfeadf;
-            opacity: .9;
-            margin: 0 0 20px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .green-button,
-        .light-button {
-            padding: 12px 18px;
-            border-radius: 999px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.3s, background 0.3s;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .green-button {
-            background: #34d399;
-            color: #0a1710;
-        }
-
-        .green-button:hover {
-            transform: translateY(-2px);
-            background: #47d091;
-        }
-
-        .light-button {
-            background: rgba(255, 255, 255, 0.18);
-            color: #eafff4;
-        }
-
-        .light-button:hover {
-            transform: translateY(-2px);
-            background: rgba(255, 255, 255, 0.28);
-        }
-
-        .hero-right {
-            width: 480px;
-            height: 260px;
-            border-radius: 22px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            background: rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(6px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-right img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 22px;
-            opacity: .9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .content-area {
-            display: flex;
-            gap: 40px;
-        }
-
-        .left-sidebar {
-            width: 250px;
-            height: fit-content;
-            position: sticky;
-            top: 100px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .filter-box,
-        .category-box,
-        .other-filters {
-            padding: 30px 20px;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .filter-box h4,
-        .category-box h4,
-        .other-filters h4 {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-            color: #34d399;
-        }
-
-        .filter-box .filter-group {
-            margin-bottom: 20px;
-        }
-
-        .filter-group label {
-            display: block;
-            margin-bottom: 10px;
-            color: #e0f2e8;
-        }
-
-        .filter-group input[type="radio"],
-        .filter-group input[type="checkbox"] {
-            margin-right: 10px;
-        }
-
-        .category-box ul,
-        .other-filters ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .category-box li,
-        .other-filters li {
-            margin-bottom: 15px;
-        }
-
-        .category-box a,
-        .other-filters a {
-            color: #e0f2e8;
-            text-decoration: none;
-            transition: color 0.3s ease, transform 0.3s ease;
-            display: block;
-        }
-
-        .category-box a:hover,
-        .other-filters a:hover {
-            color: #34d399;
-            transform: translateX(5px);
-        }
-
-        .main-product-area {
-            flex-grow: 1;
-        }
-
-        .section-title {
-            font-size: 2.2em;
-            text-align: center;
-            color: #34d399;
-            margin: 40px 0 20px;
-        }
-
-        .product-grid {
-            display: flex;
-            gap: 30px;
-            justify-items: center;
-        }
-
-        .product-card {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(8px);
-            border-radius: 20px;
-            padding: 20px;
-            position: relative;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-            min-height: 380px;
-        }
-
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-        }
-
-        .product-image-box {
-            width: 100%;
-            height: 160px;
-            border-radius: 14px;
-            background: rgba(255, 255, 255, 0.08);
-            position: relative;
-            display: flex;
-            justify-content: center;
-            z-index: 1;
-        }
-
-        .product-image-box img {
-            position: relative;
-            top: -40px;
-            height: 210px;
-            transition: transform 0.3s ease;
-            z-index: 10;
-        }
-
-        .product-card:hover img {
-            transform: scale(1.1);
-            z-index: 10;
-        }
-
-        .product-name {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.4em;
-            margin: 10px 0 5px;
-            color: #34d399;
-        }
-
-        .product-description {
-            font-size: 0.9em;
-            color: #cccccc;
-            margin: 0;
-            min-height: 40px;
-        }
-
-        .price-and-button {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            margin-top: 20px;
-        }
-
-        .price-label {
-            font-size: 1.2em;
-            font-weight: 600;
-            color: #e0f2e8;
-        }
-
-
-
-
-
-
-
-
-
-        /* Your provided CSS */
-        .product-card {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(8px);
-            border-radius: 20px;
-            padding: 20px;
-            position: relative;
-            /* This is correct */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-            min-height: 380px;
-        }
-
-        .product-image-box {
-            /* You do not need this container anymore for the specific image positioning */
-            /* Remove this entire block */
-            width: 100%;
-            height: 160px;
-            border-radius: 14px;
-            background: rgba(255, 255, 255, 0.08);
-            position: relative;
-            display: flex;
-            justify-content: center;
-            z-index: 1;
-            overflow: visible;
-            /* Add this to ensure content can overflow */
-        }
-
-        /* Updated CSS for the image to fix the issue */
-        .product-card img {
-            position: absolute;
-            /* Set the image to absolute position relative to the product-card */
-            top: -40px;
-            /* Moves the image up and out of the box */
-            height: 210px;
-            transition: transform 0.3s ease;
-            z-index: 10;
-        }
-
-        .product-card:hover img {
-            transform: scale(1.1);
-        }
-
-
-
-
-
-
-
-
-
-        .add-to-cart-button {
-            background-color: #34d399;
-            color: #08110c;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-        }
-
-        .add-to-cart-button:hover {
-            background-color: #55f3a9;
-        }
-
-        .main-footer {
-            background: #0c1a12;
-            padding: 60px 0;
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        .footer-logo {
-            font-size: 2em;
-            font-family: 'Poppins', sans-serif;
-            color: #34d399;
-            margin-bottom: 20px;
-        }
-
-        .footer-links-grid {
-            display: flex;
-            justify-content: space-between;
-            gap: 50px;
-            flex-wrap: wrap;
-            margin: 30px 0;
-        }
-
-        .footer-column {
-            flex-grow: 1;
-            min-width: 150px;
-        }
-
-        .footer-column h4 {
-            font-size: 1.2em;
-            margin-bottom: 15px;
-            color: #34d399;
-        }
-
-        .footer-column ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-column ul li a {
-            color: #e0f2e8;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-column ul li a:hover {
-            color: #34d399;
-        }
-
-        .social-media-icons a {
-            color: #e0f2e8;
-            font-size: 1.5em;
-            margin: 0 15px;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-
-        .social-media-icons a:hover {
-            color: #34d399;
-            transform: scale(1.2);
-        }
-
-        .copyright-text {
-            margin-top: 40px;
-            font-size: 0.9em;
-            color: rgba(255, 255, 255, 0.6);
-        }
-    </style>
+    <link rel="stylesheet" href="/CSS/finalProduct.css">
 </head>
 
 <body>
@@ -515,12 +24,19 @@
             <li><a href="#plants-section">Plants</a></li>
             <li><a href="#contact-footer">Contact</a></li>
         </ul>
+
+        <div class="nav-search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input class="nav-search-input" type="text" placeholder="Search plants, pots, seeds... (static UI)" />
+        </div>
+
         <div class="nav-icons">
-            <a href="#"><i class="fas fa-search"></i></a>
+            <a href="#"><i class="fas fa-gift"></i></a>
             <a href="#"><i class="fas fa-user"></i></a>
             <a href="#"><i class="fas fa-shopping-cart"></i></a>
             <a href="#"><i class="fas fa-bars"></i></a>
         </div>
+
     </header>
 
     <div class="main-wrapper">
@@ -542,6 +58,43 @@
         <div class="content-area">
 
             <aside class="left-sidebar">
+
+                <div class="side-plant-menu1">
+                <ul>
+                    <li>
+                        <i class="fas fa-home"></i>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-leaf"></i>
+                        <a href="#">Plants</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-seedling"></i>
+                        <a href="#">Seeds</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-shopping-basket"></i>
+                        <a href="#">Pots & Tools</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-info-circle"></i>
+                        <a href="#">About Us</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+                <ul class="secondary">
+                    <li>
+                        <a href="#">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="#">Terms of Use</a>
+                    </li>
+                </ul>
+            </div>
 
                 <div class="filter-box glass-box">
                     <h4>Filter Options</h4>
@@ -589,10 +142,48 @@
                         <li><a href="#">Outdoor Plants</a></li>
                     </ul>
                 </div>
+
+                <div class="glass-box side-menu3">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#indoor-plants-section">Indoor Plants</a></li>
+                        <li><a href="#flowering-plants-section">Flowering Plants</a></li>
+                        <li><a href="#air-purifying-section">Air Purifying Plants</a></li>
+                        <li><a href="#cactus-succulents-section">Cactus & Succulents</a></li>
+                        <li><a href="#">Outdoor Plants</a></li>
+                    </ul>
+                </div>
+
+                <div class="glass-box side-menu4">
+                    <h4>Shop by</h4>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-home"></i> Pots</a></li>
+                        <li><a href="#"><i class="fas fa-seedling"></i> Seeds</a></li>
+                        <li><a href="#"><i class="fas fa-shopping-basket"></i> Tools</a></li>
+                    </ul>
+                </div>
+
+                <div class="glass-box side-menu5">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                 
             </aside>
 
             <main class="main-product-area">
+                <div class="symbolic-bar">
+                    <a href="#"><i class="fas fa-seedling"></i> 100% Organic</a>
+                    <a href="#"><i class="fas fa-truck"></i> Free Delivery</a>
+                    <a href="#"><i class="fas fa-shield-alt"></i> Safe Payments</a>
+                    <a href="#"><i class="fas fa-sync"></i> Easy Returns</a>
+                </div>
                 <h2 class="section-title" id="top-selling-area">Our Top Selling Plants 🌱</h2>
+
                 <div class="product-grid">
                     <div class="product-card glass-box">
                         <div class="product-image-box"><img src="/IMAGES/Plants/Nonbg/plant_product(16).png"
@@ -817,19 +408,6 @@
                         </div>
                     </div>
 
-                    <div class="product-card glass-box">
-                        <img src="/IMAGES/Plants/Nonbg/plant_product(16).png" alt="Monstera" class="product-img">
-
-                        <div class="product-info-wrapper">
-                            <h3 class="product-name">Monstera Deliciosa</h3>
-                            <p class="product-description">A tropical plant with iconic split leaves, perfect for a
-                                statement piece.</p>
-                            <div class="price-and-button">
-                                <span class="price-label">Rs. 244/-</span>
-                                <button class="add-to-cart-button">Add</button>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </main>
         </div>
@@ -887,4 +465,5 @@
         </div>
     </footer>
 </body>
+
 </html>

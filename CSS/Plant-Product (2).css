@@ -1,0 +1,303 @@
+/* =========================================================
+   WearTomeGreen – finalProduct.css (CSS-only, no JS)
+   Dark, calm, polished e-commerce styling
+   Fonts expected: Poppins (headings), Roboto (body)
+   ========================================================= */
+
+/* -------------------------------
+   0) Design Tokens (simple only)
+   ------------------------------- */
+:root{
+  --bg:#0a1210;              /* page background (deep forest) */
+  --panel:#0f1b17;           /* sections / footer bg */
+  --text:#e9f5ef;            /* primary text */
+  --muted:#cfe4da;           /* secondary text */
+  --brand:#34d399;           /* green accent */
+  --brand-2:#7fe3bd;         /* lighter green */
+  --stroke:rgba(255,255,255,.08);
+  --glass:rgba(255,255,255,.06);
+  --shadow:0 18px 40px rgba(0,0,0,.45);
+  --radius:18px;
+  --transition:.25s ease;
+}
+
+/* -------------------------------
+   1) Base + Layout
+   ------------------------------- */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: 'Roboto', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--text);
+  background: var(--bg) url('/IMAGES/BannerWear-Tome.jpg') center/cover fixed no-repeat;
+  background-blend-mode:multiply;
+}
+
+/* Optionally soften bg */
+body::before{
+  content:"";
+  position:fixed; inset:0;
+  background:radial-gradient(80% 60% at 20% 10%, rgba(52,211,153,.10), transparent 60%),
+             radial-gradient(70% 70% at 90% 10%, rgba(52,211,153,.06), transparent 60%),
+             linear-gradient(0deg, rgba(0,0,0,.72), rgba(0,0,0,.72));
+  pointer-events:none; z-index:-1;
+}
+
+.main-wrapper{max-width:1200px; margin:0 auto; padding:24px}
+
+/* Utility – Glassmorphism */
+.glass-box{
+  background: var(--glass);
+  border:1px solid var(--stroke);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Links reset */
+a{color:inherit; text-decoration:none}
+a:hover{color:var(--brand)}
+
+/* -------------------------------
+   2) Header / Top Bar (fixed)
+   ------------------------------- */
+.top-bar{
+  position:fixed; top:0; left:0; right:0; z-index:50;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 22px;
+  background: rgba(10,18,16,.42);
+  border-bottom:1px solid var(--stroke);
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+}
+.logo-text{
+  font-family:'Poppins', sans-serif; font-weight:700; letter-spacing:.5px;
+  color:var(--brand); font-size:20px;
+}
+.nav-links{display:flex; gap:20px; list-style:none; margin:0; padding:0}
+.nav-links a{
+  font-weight:500; color:var(--text); padding:6px 2px; position:relative; transition:color var(--transition);
+}
+.nav-links a::after{
+  content:""; position:absolute; left:0; bottom:-4px; height:2px; width:0;
+  background:var(--brand); transition:width var(--transition);
+}
+.nav-links a:hover{color:var(--brand)}
+.nav-links a:hover::after{width:100%}
+
+.nav-icons a{margin-left:14px; display:inline-flex; align-items:center; justify-content:center;
+  width:34px; height:34px; border-radius:50%; transition:transform var(--transition), background var(--transition), color var(--transition)}
+.nav-icons a:hover{transform:scale(1.08); background:rgba(255,255,255,.06); color:var(--brand)}
+
+/* Extra top spacing because header is fixed */
+body{scroll-padding-top:70px}
+.main-wrapper{padding-top:88px}
+
+/* -------------------------------
+   3) Hero Section
+   ------------------------------- */
+.hero-section{
+  display:flex; gap:24px; align-items:center;
+  padding:22px; border:1px solid var(--stroke); border-radius:20px;
+  background: rgba(255,255,255,.03);
+}
+.hero-left{flex:1}
+.hero-heading{
+  margin:0 0 8px; font-family:'Poppins', sans-serif; font-weight:700; font-size:38px;
+  text-shadow:0 2px 8px rgba(0,0,0,.45);
+}
+.hero-subheading{margin:0 0 16px; color:var(--muted); text-shadow:0 1px 4px rgba(0,0,0,.45)}
+.hero-buttons{display:flex; gap:12px; flex-wrap:wrap}
+
+.green-button,.light-button{
+  cursor:pointer; border:none; border-radius:999px; font-weight:600;
+  padding:12px 18px; transition:transform var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition);
+}
+.green-button{background:var(--brand); color:#082219; box-shadow:0 8px 24px rgba(52,211,153,.25)}
+.green-button:hover{transform:translateY(-2px); box-shadow:0 14px 36px rgba(52,211,153,.35)}
+.light-button{background:rgba(255,255,255,.10); color:var(--text); border:1px solid var(--stroke)}
+.light-button:hover{transform:translateY(-2px); background:rgba(255,255,255,.16)}
+
+.hero-right{
+  width:460px; height:250px; border-radius:18px; overflow:hidden; border:1px solid var(--stroke);
+  box-shadow: var(--shadow);
+  background:#0b1411 center/cover no-repeat url('/IMAGES/BannerWear-Tome.jpg');
+}
+.hero-right img{display:none} /* in case <img> present, we hide since we set bg-image above per requirement */
+
+/* -------------------------------
+   4) Slim Symbolic Bar (optional)
+   ------------------------------- */
+.symbolic-bar{
+  margin:16px 0 26px; padding:10px 14px;
+  border:1px solid var(--stroke); border-radius:12px; background:rgba(255,255,255,.04);
+  display:flex; gap:22px; justify-content:center; align-items:center; flex-wrap:wrap;
+}
+.symbolic-bar a{display:flex; gap:8px; align-items:center; font-size:14px; opacity:.95}
+.symbolic-bar i{color:var(--brand-2)}
+
+/* -------------------------------
+   5) Sidebar – your side-plant-menu
+   ------------------------------- */
+.content-area{display:flex; gap:26px}
+.left-sidebar{width:250px; flex:0 0 250px}
+.side-plant-menu{
+  background:rgba(255,255,255,.06); padding:18px 12px; border-radius:16px;
+  box-shadow:var(--shadow); border:1px solid var(--stroke)
+}
+.side-plant-menu ul{list-style:none; margin:0; padding:0}
+.side-plant-menu li{
+  display:flex; align-items:center; gap:12px; color:#fff; margin:14px 6px; cursor:pointer;
+  transition:color var(--transition), transform var(--transition), background var(--transition);
+  padding:8px 10px; border-radius:10px;
+}
+.side-plant-menu li:hover{color:#ffd700; background:rgba(255,255,255,.05); transform:translateX(3px)}
+.side-plant-menu .fas,.side-plant-menu .fa-solid{color:#6ee7b7}
+.side-plant-menu .secondary li{color:#b4f8b4; margin-top:10px; font-size:14px}
+
+/* -------------------------------
+   6) Product Sections / Titles
+   ------------------------------- */
+.main-product-area{flex:1}
+.section-title{
+  text-align:center; color:var(--brand); font-size:28px; margin:28px 0 16px;
+  font-family:'Poppins',sans-serif; letter-spacing:.4px;
+}
+
+/* -------------------------------
+   7) Product Grid
+   ------------------------------- */
+.product-grid{
+  display:grid; grid-template-columns:repeat(4,1fr); gap:22px;
+}
+
+/* -------------------------------
+   8) Product Card + Image Overflow & Shadow FIX
+   ------------------------------- */
+.product-card{
+  position:relative; padding:18px 16px 16px; border-radius:var(--radius);
+  background:rgba(255,255,255,.05); border:1px solid var(--stroke);
+  box-shadow:var(--shadow);
+  overflow:visible; /* IMPORTANT so image can pop outside */
+  transition: box-shadow var(--transition), transform var(--transition), border-color var(--transition), background var(--transition);
+}
+
+/* If you have a wrapper for image */
+.product-card .product-image-box{
+  position:relative; width:100%; height:220px; display:flex; align-items:center; justify-content:center; overflow:visible;
+}
+
+/* Image styling – applies whether direct child <img> or inside .product-image-box */
+.product-card img,
+.product-card .product-image-box img{
+  max-width:100%; max-height:220px; object-fit:contain; display:block;
+  filter: drop-shadow(0 18px 28px rgba(0,0,0,.55));
+  transition: transform var(--transition), filter var(--transition);
+  pointer-events:none; /* so click/hovers on card are smooth */
+}
+
+/* Card Hover */
+.product-card:hover{
+  transform: translateY(-6px);
+  box-shadow:0 28px 50px rgba(0,0,0,.6);
+  background: rgba(255,255,255,.06);
+  border-color: rgba(255,255,255,.14);
+}
+.product-card:hover img{ transform:scale(1.05); filter: drop-shadow(0 26px 40px rgba(0,0,0,.6)) }
+
+/* Product text & CTA */
+.product-name{
+  margin:8px 0 4px; font-family:'Poppins',sans-serif; color:var(--text); font-size:18px; letter-spacing:.3px
+}
+.product-description{margin:0; color:var(--muted); font-size:14px; min-height:36px}
+.price-and-button{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:14px}
+.price-label{font-weight:700; color:var(--text); font-size:16px; letter-spacing:.4px}
+.add-to-cart-button{
+  padding:10px 18px; border-radius:999px; border:1px solid rgba(255,255,255,.15);
+  background:linear-gradient(180deg, var(--brand), #22c08a);
+  color:#082219; font-weight:700; cursor:pointer; transition:transform var(--transition), box-shadow var(--transition), filter var(--transition);
+}
+.add-to-cart-button:hover{ transform:translateY(-1px); box-shadow:0 10px 24px rgba(52,211,153,.35) }
+.add-to-cart-button:active{ transform:translateY(0); filter:brightness(.95) }
+
+/* -------------------------------
+   9) Footer – Ugaoo-style big footer
+   ------------------------------- */
+.big-footer{background:var(--panel); margin-top:40px; border-top:1px solid var(--stroke)}
+.footer-wrap{max-width:1200px; margin:0 auto; padding:30px 20px}
+.footer-top{display:flex; gap:28px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap}
+.footer-col{flex:1 1 240px; min-width:240px}
+.footer-col h4{margin:0 0 12px; color:var(--brand); font-family:'Poppins',sans-serif; font-size:18px}
+.footer-col ul{list-style:none; margin:0; padding:0}
+.footer-col li{margin:8px 0}
+.footer-col a{opacity:.95; transition:opacity var(--transition), transform var(--transition)}
+.footer-col a:hover{opacity:1; transform:translateX(3px)}
+
+.newsletter{margin-top:10px}
+.newsletter-form{display:flex; gap:8px; margin-top:6px}
+.newsletter-form input{
+  flex:1; padding:10px 12px; border-radius:10px; border:1px solid var(--stroke);
+  background:rgba(255,255,255,.06); color:var(--text)
+}
+.newsletter-form button{
+  padding:10px 14px; border:none; border-radius:10px; background:var(--brand); color:#082219; font-weight:700; cursor:pointer
+}
+.social-media-icons a{font-size:18px; margin-right:10px; display:inline-flex; width:36px; height:36px; align-items:center; justify-content:center; border-radius:50%;
+  background:rgba(255,255,255,.05); transition:transform var(--transition), background var(--transition), color var(--transition)}
+.social-media-icons a:hover{transform:translateY(-2px); color:#082219; background:var(--brand)}
+
+.footer-bottom{
+  border-top:1px solid var(--stroke); margin-top:18px; padding-top:12px;
+  display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; color:var(--muted)
+}
+.mini-links{display:flex; gap:8px; align-items:center}
+.mini-links a{opacity:.9}
+.mini-links a:hover{opacity:1}
+
+/* -------------------------------
+   10) Simple Responsive Rules
+   (clean & limited – CSS-only)
+   ------------------------------- */
+@media (max-width:1200px){
+  .product-grid{grid-template-columns:repeat(3,1fr)}
+  .hero-right{width:420px}
+}
+@media (max-width:900px){
+  .content-area{flex-direction:column}
+  .left-sidebar{width:100%; flex:auto}
+  .product-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-section{flex-direction:column}
+  .hero-right{width:100%}
+}
+@media (max-width:560px){
+  .product-grid{grid-template-columns:1fr}
+  .nav-links{display:none}       /* basic mobile: hide links if no CSS-toggle present */
+  .main-wrapper{padding-left:14px; padding-right:14px}
+  .hero-heading{font-size:30px}
+}
+
+/* -------------------------------
+   11) Optional CSS-only nav toggle
+   (if HTML has a checkbox#nav-toggle
+   + label.hamburger, menu slides down)
+   ------------------------------- */
+#nav-toggle{display:none}
+.hamburger{display:none}
+@media (max-width:760px){
+  .hamburger{display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:10px;
+    background:rgba(255,255,255,.06); border:1px solid var(--stroke); cursor:pointer}
+  #nav-toggle:checked ~ nav .nav-links{
+    display:flex; position:fixed; top:60px; left:0; right:0; z-index:40;
+    background:rgba(12,20,17,.96); backdrop-filter:blur(10px);
+    flex-direction:column; gap:10px; padding:14px 18px; border-bottom:1px solid var(--stroke)
+  }
+}
+
+/* -------------------------------
+   12) Small helpers
+   ------------------------------- */
+.muted{color:var(--muted)}
+.center{display:flex; align-items:center; justify-content:center}
+.round{border-radius:var(--radius)}
