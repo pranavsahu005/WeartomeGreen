@@ -5,7 +5,6 @@ html {
     font-family: 'Roboto', sans-serif;
     background-color: #0d120d;
     color: #ffffff;
-    line-height: 1.6;
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
@@ -39,7 +38,7 @@ body {
 
 .page-body {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1000px;
     padding: 0 20px;
     box-sizing: border-box;
 }
@@ -582,13 +581,12 @@ body {
 
 .long-story-paragraph {
     position: absolute;
-    top: 38%;
+    top: 30%;
     left: 40px;
     max-width: 39%;
     font-size: 1rem;
     color: #ffffff;
     font-weight: 300;
-    line-height: 1.6;
     width: 100%;
     height: 9%;
     background-color: #161618b0;
@@ -629,7 +627,7 @@ body {
     display: flex;
     justify-content: space-between;
     gap: 50px;
-    padding: 100px 0;
+    padding: 10px 0;
     align-items: flex-end;
 }
 
@@ -666,6 +664,7 @@ body {
     flex-direction: column;
     gap: 30px;
     max-width: 55%;
+
 }
 
 .story-right p {
@@ -706,7 +705,7 @@ body {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    top: -230px;
+    top: -200px;
 }
 
 .office-video-loop {
@@ -719,7 +718,7 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    top: -210px;
+    top: -200px;
     position: relative;
 }
 
@@ -750,9 +749,11 @@ body {
 .the-plant-store {
     display: flex;
     gap: 20px;
-    margin: 40px 0;
+    margin: 20px 0;
     font-family: 'Roboto', sans-serif;
     width: 100%;
+    top: -300px;
+    position: relative;
 }
 
 /* Sidebar */
@@ -893,6 +894,8 @@ body {
 .our-superpowers {
     padding: 100px 0;
     text-align: center;
+    top: -400px;
+    position: relative;
 }
 
 .our-superpowers .power-title {
@@ -950,7 +953,7 @@ body {
     align-items: center;
     padding: 100px 0;
     /* Replace with your local background image path */
-    background-image: url('../IMAGES/contact-bg.jpg');
+    background-image: url('../IMAGES/green\ \(11).jpg');
     background-size: cover;
     background-position: center;
     border-radius: 20px;
@@ -1068,11 +1071,25 @@ body {
     Bottom Garden styles
 */
 .bottom-garden {
-    width: 100%;
-    background-color: #0d120d;
-    padding: 30px 20px;
+    width: 96%;
+    padding: 10px 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 10px;
+    backdrop-filter: blur(10px);
+    background: rgba(12, 26, 18, 0.8);
 }
+
+.bottom-garden::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(52, 211, 153, 0.1), rgba(16, 50, 20, 0.1));
+    z-index: -1;
+}
+
 
 .bottom-garden-stuff {
     max-width: 1200px;
@@ -1115,6 +1132,229 @@ body {
     font-size: 1.2rem;
     font-weight: 500;
 }
+
+.main-footer {
+    background: rgba(12, 26, 18, 0.8);
+    backdrop-filter: blur(15px);
+    padding: 60px 0;
+    text-align: center;
+    margin-top: 20px;
+    color: #e0f2e8;
+    position: relative;
+    border-top: 3px solid rgba(52, 211, 153, 0.5);
+    overflow: hidden;
+}
+
+/* Glassy background with subtle gradient */
+.main-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(52, 211, 153, 0.1), rgba(16, 50, 20, 0.1));
+    z-index: -1;
+}
+
+.main-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-header {
+    margin-bottom: 40px;
+    text-align: center;
+    background-color: rgba(12, 26, 18, 0.8);
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+}
+
+.footer-logo {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #34d399;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    margin-bottom: 10px;
+}
+
+.about-us-intro {
+    font-size: 1em;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    color: rgba(224, 242, 232, 0.8);
+}
+
+.footer-links-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin: 40px 0;
+    text-align: left;
+}
+
+.footer-column {
+    flex-grow: 1;
+    min-width: 220px;
+}
+
+.footer-column h4 {
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    color: #34d399;
+    position: relative;
+    padding-left: 25px;
+    justify-content: center;
+    display: flexbox;
+    text-align: center;
+    font-weight: 600;
+    padding: -20px;
+}
+
+.footer-column h4 i {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    font-size: 1em;
+    color: #34d399;
+    filter: brightness(0) invert(1);
+    padding: 0 60px;
+
+}
+
+.footer-column .guide-intro {
+    font-size: 0.9em;
+    color: rgba(224, 242, 232, 0.7);
+    margin-bottom: 20px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 15px;
+}
+
+.footer-column ul li a {
+    color: #e0f2e8;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-column ul li a i {
+    font-size: 1.1em;
+    color: #34d399;
+
+}
+
+.footer-column ul li a:hover {
+    color: #34d399;
+    transform: translateX(5px);
+    text-shadow: 0 0 5px rgba(52, 211, 153, 0.5);
+}
+
+.footer-column .guide-intro {
+    font-size: 0.9em;
+    line-height: 1.5;
+    color: rgba(224, 242, 232, 0.7);
+    margin-top: 10px;
+    text-align: justify;
+    display: flex;
+    justify-content: center;
+}
+
+/* Payment Section */
+.footer-payment-section {
+    padding: 30px 0;
+    border-top: 1px solid rgba(224, 242, 232, 0.2);
+    border-bottom: 1px solid rgba(224, 242, 232, 0.2);
+    margin-top: 30px;
+    background: rgba(12, 26, 18, 0.8);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    position: relative;
+}
+
+.payment-methods p {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #34d399;
+    margin-bottom: 15px;
+}
+
+.payment-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.payment-icons i,
+.payment-icons .upi-icon {
+    font-size: 2.5em;
+    color: #e0f2e8;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.payment-icons i:hover,
+.payment-icons .upi-icon:hover {
+    color: #34d399;
+    transform: scale(1.1);
+}
+
+.upi-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    object-fit: contain;
+}
+
+.payment-details {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: rgba(224, 242, 232, 0.7);
+}
+
+/* Bottom Bar */
+.footer-bottom-bar {
+    margin-top: 30px;
+}
+
+.social-media-icons a {
+    color: #e0f2e8;
+    font-size: 1.8em;
+    margin: 0 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-media-icons a:hover {
+    color: #34d399;
+    transform: scale(1.2);
+}
+
+.copyright-text {
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.8;
+}
+
+.location-text {
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
 
 /*
     Small screen friendly
