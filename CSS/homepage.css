@@ -23,7 +23,9 @@ body {
     background-repeat: no-repeat;
     padding: 0 50px;
     filter: brightness(0.8) contrast(1.1) saturate(1.2) grayscale(0.1);
+    min-height: 200vh;
 }
+
 
 .full-garden-pic {
     position: absolute;
@@ -483,6 +485,8 @@ body {
     font-weight: 300;
     color: #e0e0e0;
     margin: 0 0 30px 0;
+    top: -80px;
+    position: relative;
 }
 
 .click-me-button {
@@ -520,7 +524,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    bottom: 130px;
+    bottom: 120px;
 }
 
 .bonsai-buddy-pic {
@@ -531,7 +535,7 @@ body {
     object-fit: cover;
     filter: drop-shadow(6px 10px 20px rgba(15, 65, 14, 0.87)) drop-shadow(0px 0px 30px rgba(12, 117, 0, 0.329));
     position: relative;
-    top: -115px;
+    top: -80px;
 }
 
 .leaf-filters-2 {
@@ -581,14 +585,14 @@ body {
 
 .long-story-paragraph {
     position: absolute;
-    top: 30%;
-    left: 40px;
-    max-width: 39%;
+    top: 22%;
+    left: 50px;
+    max-width: 36%;
     font-size: 1rem;
     color: #ffffff;
     font-weight: 300;
     width: 100%;
-    height: 9%;
+    height: 340px;
     background-color: #161618b0;
     text-align: start;
     padding: 0 10px;
@@ -625,29 +629,28 @@ body {
 
 .story-of-us {
     display: flex;
-    justify-content: space-between;
-    gap: 50px;
+    justify-content:center;
+    gap: 20px;
     padding: 10px 0;
     align-items: flex-end;
 }
 
 .story-left {
     max-width: 40%;
-    top: -850px;
+    top: -800px;
     position: relative;
 }
 
 .story-title {
     font-size: 2rem;
     font-weight: 900;
-    color: #a9f0d1;
+    color: #31ffa5;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5),
-        2px 2px 62px rgba(247, 247, 247, 0.836),
-        2px 2px 40px rgba(0, 0, 0, 0.5),
+        2px 2px 62px rgb(196 196 196 / 84%),
+        2px 2px 40px rgb(102 59 59 / 50%),
         0px 0px 4px rgba(42, 46, 43, 0.5);
     margin: 0 0 20px 0;
     font-family: 'Montserrat', sans-serif;
-
 }
 
 .story-words-box {
@@ -672,7 +675,7 @@ body {
     font-weight: 300;
     color: #e0e0e0;
     line-height: 1.6;
-    top: -460px;
+    top: -380px;
     max-width: 60%;
     left: 250px;
     position: relative;
@@ -681,7 +684,7 @@ body {
 .story-right ul {
     list-style-type: none;
     position: relative;
-    top: -200px;
+    top: -140px;
 }
 
 .story-right li {
@@ -705,7 +708,9 @@ body {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    top: -200px;
+    top: -100px;
+    filter: brightness(0.76)  contrast(1.1) saturate(1.2) grayscale(0.1) opacity(0.9);
+
 }
 
 .office-video-loop {
@@ -718,7 +723,7 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    top: -200px;
+    top: -100px;
     position: relative;
 }
 
@@ -810,6 +815,8 @@ body {
     background: rgba(255, 255, 255, 0.15);
     border-radius: 20px;
     padding: 30px;
+    position: relative;
+    top: -70px
 }
 
 /* Top Bar */
@@ -894,7 +901,7 @@ body {
 .our-superpowers {
     padding: 100px 0;
     text-align: center;
-    top: -400px;
+    top: -480px;
     position: relative;
 }
 
@@ -944,6 +951,131 @@ body {
     color: #e0e0e0;
 }
 
+/* 🌿 Futuristic Plant Laboratory Section CSS */
+.plant-lab-section {
+    background: #29462980;
+    padding: 10px 0px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    top: -550px;
+    backdrop-filter: blur(15px) opacity(0.8);
+
+}
+
+.lab-heading {
+    font-size: 2.8rem;
+    color: #d6ffd6;
+    margin-bottom: 15px;
+}
+
+.lab-subtitle {
+    max-width: 850px;
+    margin: 0 auto 60px auto;
+    font-size: 1.05rem;
+    color: #c8ffc8;
+    line-height: 1.8;
+}
+
+.lab-stats {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.stat-box {
+    background: rgb(255 255 255 / 27%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 14px;
+    padding: 25px 20px;
+    width: 220px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(20px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-box h3 {
+    font-size: 1.6rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.stat-box p {
+    font-size: 0.9rem;
+    color: #e0ffe0;
+    line-height: 1.5;
+}
+
+.stat-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.5);
+}
+
+.lab-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.lab-card {
+    background: rgb(78 166 115 / 27%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 25px;
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    -webkit-backdrop-filter: blur(10px);
+    position: relative;
+    backdrop-filter: blur(20px) opacity(0.5) brightness(10);
+}
+
+.lab-card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.lab-img {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 18px;
+}
+
+.lab-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.lab-card:hover img {
+    transform: scale(1.1);
+}
+
+.lab-card h3 {
+    color: #defedb;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+.lab-card h3 i {
+    margin-right: 8px;
+    color: #90ee90;
+}
+
+.lab-card p {
+    font-size: 0.95rem;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+
+
 /*
     Let's Chat section styles
 */
@@ -959,6 +1091,8 @@ body {
     border-radius: 20px;
     position: relative;
     overflow: hidden;
+    top: -500px;
+    width: 100%;
 }
 
 .chat-with-us::before {
@@ -1067,6 +1201,8 @@ body {
     transform: translateY(-3px);
 }
 
+
+
 /*
     Bottom Garden styles
 */
@@ -1077,6 +1213,8 @@ body {
     margin-top: 10px;
     backdrop-filter: blur(10px);
     background: rgba(12, 26, 18, 0.8);
+    top: -500px;
+    position: relative;
 }
 
 .bottom-garden::before {
@@ -1133,6 +1271,8 @@ body {
     font-weight: 500;
 }
 
+
+/*Footer*/
 .main-footer {
     background: rgba(12, 26, 18, 0.8);
     backdrop-filter: blur(15px);
@@ -1143,7 +1283,11 @@ body {
     position: relative;
     border-top: 3px solid rgba(52, 211, 153, 0.5);
     overflow: hidden;
+    position: relative;
+    top: -500px;
+    bottom: 0px;
 }
+
 
 /* Glassy background with subtle gradient */
 .main-footer::before {
@@ -1353,21 +1497,4 @@ body {
 .location-text {
     font-size: 0.9em;
     color: rgba(255, 255, 255, 0.7);
-}
-
-
-/*
-    Small screen friendly
-*/
-@media (max-width: 992px) {
-    .vine-content {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .branch-nav,
-    .gardener-actions {
-        margin-top: 10px;
-    }
 }
