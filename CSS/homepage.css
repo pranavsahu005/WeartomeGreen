@@ -637,7 +637,7 @@ body {
 
 .story-left {
     max-width: 40%;
-    top: -800px;
+    top: -810px;
     position: relative;
 }
 
@@ -848,9 +848,10 @@ body {
 .plant-box {
     text-align: center;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgb(255 255 255 / 55%);
     border-radius: 15px;
     transition: transform 0.3s ease, background 0.3s ease;
+    color:#124300;
 }
 
 .plant-box img {
@@ -860,11 +861,14 @@ body {
     border-radius: 12px;
 }
 
-.plant-box:hover {
+.plant-box:hover{
     transform: translateY(-8px);
     background: rgba(255, 255, 255, 0.25);
+    color:#ffffff;
 }
-
+.plant-box:hover .plant-price-tag {
+    color: wheat;
+}
 .plant-buddy-name {
     font-weight: bold;
     font-size: 18px;
@@ -872,9 +876,10 @@ body {
 }
 
 .plant-price-tag {
-    color: #ffecec;
+    color: #152814;
     margin-bottom: 12px;
     font-size: 16px;
+    font-weight:900;
 }
 
 
@@ -883,7 +888,7 @@ body {
     padding: 10px 20px;
     border: none;
     border-radius: 20px;
-    background: #333;
+    background: #388000;
     color: white;
     cursor: pointer;
     font-size: 14px;
@@ -960,7 +965,8 @@ body {
     position: relative;
     top: -550px;
     backdrop-filter: blur(15px) opacity(0.8);
-
+    border-radius: 25px;
+    
 }
 
 .lab-heading {
@@ -1030,20 +1036,32 @@ body {
     -webkit-backdrop-filter: blur(10px);
     position: relative;
     backdrop-filter: blur(20px) opacity(0.5) brightness(10);
+    box-shadow: 0 4px 15px rgba(33, 61, 15, 0.781),
+                0 2px 10px rgba(33, 61, 15, 0.5),
+                0 1px 5px rgba(33, 61, 15, 0.3);
 }
 
 .lab-card:hover {
     transform: translateY(-12px) scale(1.03);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 10px 25px rgba(9, 56, 7, 0.6);
     border-color: rgba(255, 255, 255, 0.3);
+    z-index: 2;
+    background-color: rgba(78, 166, 115, 0.4);
 }
 
-.lab-img {
+.video-box2 {
     width: 100%;
     height: 200px;
     overflow: hidden;
     border-radius: 12px;
     margin-bottom: 18px;
+    filter: brightness(0.9)  contrast(1.1) saturate(1.2) grayscale(0.1) opacity(0.9);
+}
+
+.video-box2 video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .lab-img img {
@@ -1074,11 +1092,245 @@ body {
     line-height: 1.6;
 }
 
+/*overfllow*/
 
 
-/*
-    Let's Chat section styles
-*/
+
+.story-box {
+  position: absolute;
+  top: 116.5cm; /* as you said */
+  left: 0;
+  width: 100%;
+  height: 450px;
+  background: linear-gradient(135deg, #0d0d0d, #111a11);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.story-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 slots (3 video + 4 img) */
+  grid-gap: 15px;
+  width: 90%;
+  height: 100%;
+  background: rgba(20, 30, 25, 0.8);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(0, 255, 120, 0.3);
+  padding: 15px;
+}
+
+.story-item {
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 255, 100, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.story-item.video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+.story-item.img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  transition: transform 0.3s ease;
+}
+
+.story-item.img img:hover {
+  transform: scale(1.1);
+}
+
+/*Over flow*/
+
+/* Main Section Container */
+.future-section {
+    position: absolute;
+    top: 126cm;
+    height: 510px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 1160px;
+    background: rgb(204 246 184 / 25%); /* Soft white glass */
+    color: #2F4F4F; /* Dark slate for readability */
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-sizing: border-box;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 0 20px rgba(0, 50, 0, 0.1);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+/* Left Vertical Navigation */
+.future-nav {
+    background: rgb(156 222 244 / 15%);
+    border: 1px solid rgba(200, 200, 200, 0.3);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 6px;
+    transition: background-color 0.5s ease;
+    backdrop-filter: blur(6px);
+}
+
+.future-nav a {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    border: 1px solid rgba(100, 100, 100, 0.1);
+    text-decoration: none;
+    color: #f1fff1; /* Plant-friendly green */
+    transition: transform .4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
+    font-size: 18px;
+    background: transparent;
+}
+
+.future-nav a:hover {
+    transform: translateY(-2px);
+    background-color: rgb(0 6 0 / 10%);
+    border: 1px solid #ffffff;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
+    color:#13ff72;
+}
+
+/* Right Content Strip */
+.future-strip {
+    background: rgb(149 192 178 / 20%);
+    border: 1px solid rgba(200, 200, 200, 0.3);
+    border-radius: 18px;
+    padding: 12px;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 12px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: background-color 0.5s ease;
+    backdrop-filter: blur(8px);
+    top: -7px;
+    margin-top: 2px;
+    position: relative;
+}
+
+/* Card */
+.future-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: auto;
+    padding: 8px;
+    border: 2px solid rgb(255 255 255 / 60%);
+    border-radius: 16px;
+    background: rgb(255 255 255 / 30%);
+    width: 180px;
+    margin-bottom: 12px;
+    transition: transform .4s ease, box-shadow .4s ease, background-color 0.4s ease;
+    backdrop-filter: blur(6px);
+     z-index:0;
+}
+
+.future-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(120, 180, 120, 0.4);
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Media Wrapper */
+.media-wrap {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 2px solid rgb(255 255 255 / 30%);
+    height: 250px;
+    width: 100%;
+    transition: transform .4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 0 6px rgba(120, 180, 120, 0.2);
+    contain:content;
+}
+
+.media-wrap:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(120, 180, 120, 0.4);
+}
+
+.media {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Text Box */
+.future-text {
+    width: 90%;
+    margin-top: 10px;
+    padding: 10px 12px;
+    border: 1px solid rgba(180, 180, 180, 0.3);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.25);
+    line-height: 1.4;
+    font-size: 14px;
+    transition: transform .4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
+    backdrop-filter: blur(4px);
+    color: #2F4F4F;
+    box-shadow: 0 0 6px rgba(150, 150, 150, 0.2);
+    z-index :10;
+}
+
+.future-text:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 10px rgba(180, 180, 180, 0.3);
+}
+
+/* Symbols and Headings */
+.symbol {
+    font-weight: 700;
+    letter-spacing: .04em;
+    margin-bottom: 4px;
+    color: #4CAF50;
+    text-shadow: 0 0 4px rgba(76, 175, 80, 0.4);
+}
+
+.headline {
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #1B5E20;
+}
+
+.hi,
+.future-text b {
+    font-weight: 700;
+    color: #2E7D32;
+    text-shadow: 0 0 4px rgba(46, 125, 50, 0.3);
+}
+
+
+
+/* Let's Chat section styles */
 .chat-with-us {
     display: flex;
     justify-content: space-between;
@@ -1091,8 +1343,9 @@ body {
     border-radius: 20px;
     position: relative;
     overflow: hidden;
-    top: -500px;
     width: 100%;
+    bottom: -40px;
+    
 }
 
 .chat-with-us::before {
@@ -1284,7 +1537,6 @@ body {
     border-top: 3px solid rgba(52, 211, 153, 0.5);
     overflow: hidden;
     position: relative;
-    top: -500px;
     bottom: 0px;
 }
 

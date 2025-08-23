@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- FontAwesome (icons used in left nav) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    referrerpolicy="no-referrer"
+  />
+  <style>
+    /* ========= THEME HOOKS =========
+       Reuse existing site tokens. No new colors are invented.
+       These variables are expected to already exist on your site.
+       Example names: --bg, --panel, --text, --muted, --accent, --glow, --footer-gradient
+    */
+   :root{
+     --bg: #0d120d;
+     --panel: #1a1f1a;
+     --text: #ffffff;
+     --muted: #888888;
+     --accent: #4caf50;
+     --glow: rgba(76, 175, 80, 0.5);
+     --footer-gradient: linear-gradient(180deg, #0d120d 0%, #1a1f1a 100%);
+    }
+
+    /* ====== MAIN CONTAINER (absolute, fixed height) ====== */
+    .future-section{
+      position: absolute;
+      top: 1.5cm;             /* required by user */
+      height: 450px;            /* strict height */
+      left: 0;
+      right: 0;
+      margin-inline: auto;
+      max-width: 1200px;
+      /* Background should match footer area */
+      background: var(--footer-gradient, var(--bg));
+      /* Soft inner padding */
+      padding: 12px;
+      /* Subtle border using theme lines if available */
+      border: 1px solid var(--line, transparent);
+      /* Glass layer */
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      /* Layout */
+      display: grid;
+      grid-template-columns: 64px 1fr; /* left nav + content */
+      gap: 12px;
+      box-sizing: border-box;
+       /* Keep it tight inside 450px */
+    }
+
+    /* ====== SIDE NAV (left column) ====== */
+    .future-nav{
+      background: var(--panel);
+      border: 1px solid var(--line, transparent);
+      border-radius: 16px;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 6px;
+      box-shadow: 0 0 12px 0 var(--shadow, transparent) inset;
+    }
+    .future-nav a{
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: var(--panel);
+      color: var(--muted, inherit);
+      border: 1px solid var(--line, transparent);
+      transition: transform .2s ease, box-shadow .2s ease, color .2s ease, border-color .2s ease;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    .future-nav a:hover{
+      transform: translateY(-2px);
+      color: var(--accent);
+      border-color: var(--accent);
+      /* theme glow */
+      box-shadow: 0 0 16px 2px var(--accent);
+    }
+
+    /* ====== CONTENT GRID (right column) ====== */
+    .future-grid{
+      background: var(--panel);
+      border: 1px solid var(--line, transparent);
+      border-radius: 18px;
+      padding: 12px;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;    /* media + text */
+      grid-template-rows: repeat(4, 1fr);   /* 4 rows within 450px */
+      gap: 12px;
+      height: 100%;                         /* fill 450px area */
+      box-shadow: 0 0 12px 0 var(--shadow, transparent) inset;
+                        /* keep it neat */
+    }
+
+    /* Each row pair */
+    .future-box{
+      position: relative;
+      display: contents; /* we’ll place media + text into the two columns cleanly */
+    }
+
+    /* Media wrappers keep aspect and hover glow */
+    .media-wrap{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--line, transparent);
+      background: var(--bg);
+      transition: box-shadow .2s ease, transform .2s ease, border-color .2s ease;
+    }
+    .media-wrap:hover{
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      box-shadow: 0 0 18px 2px var(--accent); /* theme glow */
+    }
+
+    /* Images & Videos inside keep same sizing */
+    .media{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;     /* portrait fit */
+      display: block;
+    }
+    .media-video{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Text card */
+    .future-text{
+      background: color-mix(in oklab, var(--panel) 85%, transparent);
+      /* if color-mix unsupported, the panel background still shows due to parent */
+      border: 1px solid var(--line, transparent);
+      border-radius: 16px;
+      padding: 12px 14px;
+      color: var(--text);
+      line-height: 1.3;
+      font-size: 0.95rem;
+      display: grid;
+      align-content: center;
+      gap: 6px;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+    .future-text .symbol{
+      font-size: 1rem;
+      color: var(--accent);
+      letter-spacing: .04em;
+    }
+    .future-text .headline{
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .future-text b,
+    .future-text .hi{
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* Tighten typography on small widths while keeping height strict */
+    @media (max-width: 900px){
+      .future-grid{
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      .future-text{ font-size: 0.9rem; padding: 10px 12px; }
+    }
+    @media (max-width: 680px){
+      .future-section{ max-width: 100%; }
+      .future-text{ font-size: 0.86rem; }
+    }
+    @media (max-width: 540px){
+      .future-text{ font-size: 0.82rem; }
+    }
+  </style>
+</head>
+<body>
+  <section class="future-section" aria-label="Futuristic Presentation">
+    <!-- Left column: vertical nav -->
+    <nav class="future-nav" aria-label="Quick Navigation">
+      <a href="#home" title="Home"><i class="fa-solid fa-house"></i></a>
+      <a href="#seed" title="Seedling"><i class="fa-solid fa-seedling"></i></a>
+      <a href="#cart" title="Cart"><i class="fa-solid fa-cart-shopping"></i></a>
+      <a href="#user" title="User"><i class="fa-solid fa-user"></i></a>
+      <a href="#cog" title="Settings"><i class="fa-solid fa-cog"></i></a>
+      <a href="#leaf" title="Leaf"><i class="fa-solid fa-leaf"></i></a>
+      <a href="#info" title="Info"><i class="fa-solid fa-circle-info"></i></a>
+    </nav>
+
+    <!-- Right column: alternating media + paragraphs (image → video → paragraph → repeat) -->
+    <div class="future-grid">
+      <!-- ROW 1: Image + Paragraph (AI in farming) -->
+      <div class="future-box">
+        <div class="media-wrap">
+          <img class="media" src="/IMAGES/Future-pic(1).jpeg" alt="AI in farming — futuristic greenhouse" loading="lazy" />
+        </div>
+        <div class="future-text">
+          <div class="symbol">✦</div>
+          <div class="headline">AI-Powered Growth</div>
+          <p>
+            Sensors + models guide watering and nutrients for <b>precision yields</b>.  
+            Fields learn patterns, boosting <span class="hi">sustainable output</span> with every season.
+          </p>
+        </div>
+      </div>
+
+      <!-- ROW 2: Video + Paragraph (Robotics in agriculture) -->
+      <div class="future-box">
+        <div class="media-wrap">
+          <video class="media-video" src="/VEDIO/presentation.mp4" autoplay muted loop playsinline></video>
+        </div>
+        <div class="future-text">
+          <div class="symbol">⚙</div>
+          <div class="headline">Robotics in Agriculture</div>
+          <p>
+            Autonomous bots handle <b>planting</b>, <b>weeding</b>, and harvest timing.  
+            Precision robotics reduce waste and raise <span class="hi">efficiency</span>.
+          </p>
+        </div>
+      </div>
+
+      <!-- ROW 3: Image + Paragraph (Smart greenhouses) -->
+      <div class="future-box">
+        <div class="media-wrap">
+          <img class="media" src="/IMAGES/Future-pic(2).jpeg" alt="Smart greenhouse control surfaces" loading="lazy" />
+        </div>
+        <div class="future-text">
+          <div class="symbol">✧</div>
+          <div class="headline">Smart Greenhouses</div>
+          <p>
+            Climate is tuned in real time using <b>predictive control</b>.  
+            Light, humidity, CO₂ — optimized for <span class="hi">rapid growth</span> and quality.
+          </p>
+        </div>
+      </div>
+
+      <!-- ROW 4: Video + Paragraph (Sustainable cities) -->
+      <div class="future-box">
+        <div class="media-wrap">
+          <video class="media-video" src="/VEDIO/presentation-2.mp4" autoplay muted loop playsinline></video>
+        </div>
+        <div class="future-text">
+          <div class="symbol">⍟</div>
+          <div class="headline">Sustainable Cities</div>
+          <p>
+            Vertical farms plug into clean grids and recycle water.  
+            Data creates <b>resilient food webs</b> for <span class="hi">greener urban living</span>.
+          </p>
+        </div>
+      </div>
+
+      <!-- ROW 5: Image + Paragraph (AI + robotics blend) -->
+      <div class="future-box">
+        <div class="media-wrap">
+          <img class="media" src="/IMAGES/Future-pic(3).jpeg" alt="Robotic arms caring for plants" loading="lazy" />
+        </div>
+        <div class="future-text">
+          <div class="symbol">✦</div>
+          <div class="headline">Vision-Guided Care</div>
+          <p>
+            Cameras read leaves for early stress and disease.  
+            <b>AI insights</b> trigger swift, <span class="hi">targeted actions</span>.
+          </p>
+        </div>
+      </div>
+
+      <!-- ROW 6: Video + Paragraph (Automation flow) -->
+      <div class="future-box">
+        <div class="media-wrap">
+          <video class="media-video" src="/VEDIO/presentation-3.mp4" autoplay muted loop playsinline></video>
+        </div>
+        <div class="future-text">
+          <div class="symbol">⚙</div>
+          <div class="headline">Autonomous Flow</div>
+          <p>
+            From seed to shelf, robots coordinate logistics.  
+            <b>Just-in-time</b> harvests cut losses and elevate freshness.
+          </p>
+        </div>
+      </div>
+
+      <!-- ROW 7: Image + Paragraph (Circular systems) -->
+      <div class="future-box">
+        <div class="media-wrap">
+          <img class="media" src="/IMAGES/Future-pic(4).jpeg" alt="Circular water and nutrient loops" loading="lazy" />
+        </div>
+        <div class="future-text">
+          <div class="symbol">✧</div>
+          <div class="headline">Circular Systems</div>
+          <p>
+            Nutrients loop, water recycles, and waste becomes input.  
+            <b>Closed cycles</b> drive <span class="hi">long-term sustainability</span>.
+          </p>
+        </div>
+      </div>
+
+      <!-- ROW 8: Video + Paragraph (City-scale integration) -->
+      <div class="future-box">
+        <div class="media-wrap">
+          <video class="media-video" src="/VEDIO/presentation-4.mp4" autoplay muted loop playsinline></video>
+        </div>
+        <div class="future-text">
+          <div class="symbol">⍟</div>
+          <div class="headline">City-Scale Integration</div>
+          <p>
+            Data links farms, markets, and homes.  
+            <b>Smart demand</b> syncs with <span class="hi">adaptive supply</span>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
