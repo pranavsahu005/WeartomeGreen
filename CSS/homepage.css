@@ -76,14 +76,20 @@ body {
 
 .leaf-icon {
     width: 30px;
-    height: 30px;
+    height: 35px;
     margin-right: 10px;
     filter: brightness(0) invert(1);
-    border-radius: 50%;
+}
+
+.leaf-icon:hover {
+    filter: brightness(1) invert(0);
+    transform: scale(1.1);
+
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
 }
 
 .plant-name {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 700;
     letter-spacing: 1px;
 }
@@ -629,7 +635,7 @@ body {
 
 .story-of-us {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     gap: 20px;
     padding: 10px 0;
     align-items: flex-end;
@@ -709,7 +715,7 @@ body {
     overflow: hidden;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     top: -100px;
-    filter: brightness(0.76)  contrast(1.1) saturate(1.2) grayscale(0.1) opacity(0.9);
+    filter: brightness(0.76) contrast(1.1) saturate(1.2) grayscale(0.1) opacity(0.9);
 
 }
 
@@ -812,11 +818,14 @@ body {
     position: relative;
     z-index: 1;
     width: 100%;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(170, 201, 170, 0.24);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px) drop-shadow(0 0 15px rgba(0, 0, 0, 0.3)) brightness(1.1) contrast(1.1) saturate(1.2);
     border-radius: 20px;
     padding: 30px;
     position: relative;
-    top: -70px
+    top: -70px;
 }
 
 /* Top Bar */
@@ -851,7 +860,7 @@ body {
     background: rgb(255 255 255 / 55%);
     border-radius: 15px;
     transition: transform 0.3s ease, background 0.3s ease;
-    color:#124300;
+    color: #124300;
 }
 
 .plant-box img {
@@ -861,14 +870,16 @@ body {
     border-radius: 12px;
 }
 
-.plant-box:hover{
+.plant-box:hover {
     transform: translateY(-8px);
     background: rgba(255, 255, 255, 0.25);
-    color:#ffffff;
+    color: #ffffff;
 }
+
 .plant-box:hover .plant-price-tag {
     color: wheat;
 }
+
 .plant-buddy-name {
     font-weight: bold;
     font-size: 18px;
@@ -879,7 +890,7 @@ body {
     color: #152814;
     margin-bottom: 12px;
     font-size: 16px;
-    font-weight:900;
+    font-weight: 900;
 }
 
 
@@ -966,7 +977,7 @@ body {
     top: -550px;
     backdrop-filter: blur(15px) opacity(0.8);
     border-radius: 25px;
-    
+
 }
 
 .lab-heading {
@@ -1037,8 +1048,8 @@ body {
     position: relative;
     backdrop-filter: blur(20px) opacity(0.5) brightness(10);
     box-shadow: 0 4px 15px rgba(33, 61, 15, 0.781),
-                0 2px 10px rgba(33, 61, 15, 0.5),
-                0 1px 5px rgba(33, 61, 15, 0.3);
+        0 2px 10px rgba(33, 61, 15, 0.5),
+        0 1px 5px rgba(33, 61, 15, 0.3);
 }
 
 .lab-card:hover {
@@ -1055,7 +1066,7 @@ body {
     overflow: hidden;
     border-radius: 12px;
     margin-bottom: 18px;
-    filter: brightness(0.9)  contrast(1.1) saturate(1.2) grayscale(0.1) opacity(0.9);
+    filter: brightness(0.9) contrast(1.1) saturate(1.2) grayscale(0.1) opacity(0.9);
 }
 
 .video-box2 video {
@@ -1097,57 +1108,59 @@ body {
 
 
 .story-box {
-  position: absolute;
-  top: 116.5cm; /* as you said */
-  left: 0;
-  width: 100%;
-  height: 450px;
-  background: linear-gradient(135deg, #0d0d0d, #111a11);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
+    position: absolute;
+    top: 116.5cm;
+    /* as you said */
+    left: 0;
+    width: 100%;
+    height: 450px;
+    background: linear-gradient(135deg, #0d0d0d, #111a11);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
 .story-container {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr); /* 7 slots (3 video + 4 img) */
-  grid-gap: 15px;
-  width: 90%;
-  height: 100%;
-  background: rgba(20, 30, 25, 0.8);
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 0 25px rgba(0, 255, 120, 0.3);
-  padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    /* 7 slots (3 video + 4 img) */
+    grid-gap: 15px;
+    width: 90%;
+    height: 100%;
+    background: rgba(20, 30, 25, 0.8);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(0, 255, 120, 0.3);
+    padding: 15px;
 }
 
 .story-item {
-  overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 0 0 15px rgba(0, 255, 100, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 255, 100, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .story-item.video video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: inherit;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
 }
 
 .story-item.img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: inherit;
-  transition: transform 0.3s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    transition: transform 0.3s ease;
 }
 
 .story-item.img img:hover {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 /*Over flow*/
@@ -1161,8 +1174,10 @@ body {
     right: 0;
     margin: 0 auto;
     max-width: 1160px;
-    background: rgb(204 246 184 / 25%); /* Soft white glass */
-    color: #2F4F4F; /* Dark slate for readability */
+    background: rgb(204 246 184 / 25%);
+    /* Soft white glass */
+    color: #2F4F4F;
+    /* Dark slate for readability */
     padding: 12px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(10px);
@@ -1200,7 +1215,8 @@ body {
     border-radius: 12px;
     border: 1px solid rgba(100, 100, 100, 0.1);
     text-decoration: none;
-    color: #f1fff1; /* Plant-friendly green */
+    color: #f1fff1;
+    /* Plant-friendly green */
     transition: transform .4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
     font-size: 18px;
     background: transparent;
@@ -1211,7 +1227,7 @@ body {
     background-color: rgb(0 6 0 / 10%);
     border: 1px solid #ffffff;
     box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
-    color:#13ff72;
+    color: #13ff72;
 }
 
 /* Right Content Strip */
@@ -1234,6 +1250,28 @@ body {
     position: relative;
 }
 
+.future-strip .main-headline {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ebf0ed;
+    text-shadow: 0 0 4px rgba(9, 104, 25, 0.4),
+        0 0 20px rgba(12, 71, 12, 0.534),
+        0 0 12px rgba(154, 173, 123, 0.185),
+        0 0 16px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(34, 104, 52, 0.4);
+    filter: opacity(0.8);
+    position: relative;
+    padding: 10px;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
 /* Card */
 .future-card {
     display: flex;
@@ -1249,7 +1287,7 @@ body {
     margin-bottom: 12px;
     transition: transform .4s ease, box-shadow .4s ease, background-color 0.4s ease;
     backdrop-filter: blur(6px);
-     z-index:0;
+    z-index: 0;
 }
 
 .future-card:hover {
@@ -1268,7 +1306,7 @@ body {
     width: 100%;
     transition: transform .4s ease, box-shadow 0.4s ease;
     box-shadow: 0 0 6px rgba(120, 180, 120, 0.2);
-    contain:content;
+    contain: content;
 }
 
 .media-wrap:hover {
@@ -1297,7 +1335,7 @@ body {
     backdrop-filter: blur(4px);
     color: #2F4F4F;
     box-shadow: 0 0 6px rgba(150, 150, 150, 0.2);
-    z-index :10;
+    z-index: 10;
 }
 
 .future-text:hover {
@@ -1345,7 +1383,7 @@ body {
     overflow: hidden;
     width: 100%;
     bottom: -40px;
-    
+
 }
 
 .chat-with-us::before {
